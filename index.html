@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俱乐部甄选球员包 球员公示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#F5F7FA;color:#333;line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#1F4E78,#2E75B6);color:#fff;padding:32px 28px;border-radius:14px;margin-bottom:24px;box-shadow:0 4px 16px rgba(31,78,120,.15)}
+.header h1{font-size:26px;font-weight:700;margin-bottom:8px}
+.header .meta{font-size:14px;opacity:.9;display:flex;gap:20px;flex-wrap:wrap;margin-top:10px}
+.header .meta .tag{background:rgba(255,255,255,.2);padding:2px 10px;border-radius:10px;font-size:13px}
+
+.toc{background:#fff;border-radius:12px;padding:20px 24px;margin-bottom:28px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.toc h2{font-size:17px;color:#1F4E78;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #E3F2FD}
+.nav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.nav-item{display:block;padding:8px 14px;background:#F0F6FC;border-radius:8px;color:#1F4E78;text-decoration:none;font-size:14px;transition:all .15s;border:1px solid transparent}
+.nav-item:hover{background:#2E75B6;color:#fff;border-color:#2E75B6}
+
+.pack-section{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.pack-title{font-size:19px;color:#1F4E78;margin-bottom:4px}
+.player-count{font-size:13px;color:#888;margin-bottom:12px}
+
+.player-table{width:100%;border-collapse:collapse;font-size:14px}
+.player-table th{background:#1F4E78;color:#fff;padding:8px 12px;text-align:left;font-weight:600;position:sticky;top:0}
+.player-table td{padding:7px 12px;border-bottom:1px solid #eee}
+.player-table tr:hover td{background:#F0F6FC}
+.player-table tr:nth-child(even) td{background:#FAFBFC}
+.player-table tr:nth-child(even):hover td{background:#F0F6FC}
+
+.icon-block{margin-top:16px;padding:14px 16px;background:#F3E8FB;border-radius:10px}
+.icon-label{font-size:14px;color:#7B1FA2;font-weight:600;margin-bottom:10px}
+.chip-grid{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-block;padding:4px 10px;background:#EAF3FB;border-radius:14px;font-size:13px;color:#1a1a1a}
+.icon-chip{background:#F3E8FB;color:#5B2A86;border:1px solid #D1C4E9}
+
+.back-top{display:inline-block;margin-top:14px;font-size:13px;color:#2E75B6;text-decoration:none;opacity:.7}
+.back-top:hover{opacity:1}
+.warn{color:#E53935;font-size:12px;margin-top:8px}
+
+.footer{text-align:center;padding:24px;color:#999;font-size:13px}
+
+@media(max-width:640px){
+  .container{padding:12px}
+  .header{padding:20px 16px}
+  .header h1{font-size:20px}
+  .nav-grid{grid-template-columns:1fr 1fr}
+  .pack-section{padding:16px}
+  .player-table{font-size:12px}
+  .player-table th,.player-table td{padding:5px 6px}
+}
+</style>
+</head>
+<body>
+<div class="container" id="top">
+
+<div class="header">
+  <h1>⚽ 俱乐部甄选球员包 球员公示</h1>
+  <div class="meta">
+    <span class="tag">📅 2026年9月14日-10月7日</span>
+    <span class="tag">🔁 单端限购20次</span>
+    <span class="tag">🏷️ 前5次八折</span>
+  </div>
+  <p style="margin-top:12px;font-size:14px;opacity:.85">打开球员包随机获得一名 8/9/10 强球员（含传奇时刻 ICON TM），详细名单如下</p>
+</div>
+
+<div class="toc">
+  <h2>📋 队套目录（共 34 个俱乐部球员包）</h2>
+  <div class="nav-grid">
+    <a class="nav-item" href="#pack-1">皇家马德里甄选100人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-2">切尔西甄选80人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-3">红蓝军团甄选80人球员包8-10强（含传奇时刻1强球员）-2609</a>
+<a class="nav-item" href="#pack-4">拜仁慕尼黑甄选80人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-5">曼城甄选70人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-6">利物浦甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-7">巴黎圣日耳曼甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-8">兵工厂甄选60人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-9">红黑军团甄选80人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-10">红魔甄选70人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-11">尤文图斯甄选70人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-12">内拉祖里甄选70人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-13">马德里竞技甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-14">罗马甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-15">马赛甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-16">热刺甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-17">药厂甄选40人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-18">红白军团甄选50人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-19">大黄蜂甄选40人球员包8-10强</a>
+<a class="nav-item" href="#pack-20">铁锤帮甄选40人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-21">本菲卡甄选40人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-22">那不勒斯甄选40人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-23">阿尔坎塔拉血脉甄选40人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-24">阿贾克斯甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-25">埃因霍温甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-26">黄色潜水艇甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-27">红牛军团甄选30人球员包8-10强</a>
+<a class="nav-item" href="#pack-28">里尔甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-29">维拉人甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-30">埃弗顿甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-31">喜鹊军团甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-32">波尔图甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+<a class="nav-item" href="#pack-33">霍芬海姆甄选30人球员包8-10强</a>
+<a class="nav-item" href="#pack-34">里昂甄选30人球员包8-10强（含传奇时刻1强球员）</a>
+  </div>
+</div>
+
+<section id="pack-1" class="pack-section">
+<h3 class="pack-title">皇家马德里甄选100人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：100人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>姆巴佩</td><td>ST</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>2</td><td>姆巴佩</td><td>ST</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>3</td><td>埃托奥</td><td>ST</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>路易斯菲戈</td><td>LW</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>5</td><td>埃托奥</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>6</td><td>路易斯菲戈</td><td>LW</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>7</td><td>埃托奥</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>8</td><td>哈维·阿隆索</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>9</td><td>罗伯特·卡洛斯</td><td>LB</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>10</td><td>罗伯特·卡洛斯</td><td>LB</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>11</td><td>哈维·阿隆索</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>12</td><td>莫德里奇</td><td>CM</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>13</td><td>尼科·帕斯</td><td>CAM</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>14</td><td>马科斯·略伦特</td><td>RB</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>15</td><td>托尼·克罗斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>16</td><td>伊斯科</td><td>CAM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>17</td><td>帕雷霍</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>18</td><td>C. 罗纳尔多</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>19</td><td>托尼·克罗斯</td><td>CM</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>20</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：一马当先</td><td>138</td></tr>
+<tr><td>21</td><td>罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>22</td><td>齐达内</td><td>CAM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>23</td><td>D. 苏克</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>24</td><td>齐达内</td><td>CAM</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>25</td><td>伊斯科</td><td>CAM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>26</td><td>D. 苏克</td><td>ST</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>27</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：马到成功</td><td>138</td></tr>
+<tr><td>28</td><td>帕雷霍</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>29</td><td>马科斯·略伦特</td><td>RB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>30</td><td>罗纳尔多</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>31</td><td>J. 拉蒙</td><td>CB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>32</td><td>C. 罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>33</td><td>C. 罗纳尔多</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>34</td><td>巴尔维德</td><td>RM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>35</td><td>马塞洛</td><td>LB</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>36</td><td>马塞洛</td><td>LB</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>37</td><td>马克莱莱</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>38</td><td>维尼修斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>39</td><td>本泽马</td><td>ST</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>40</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>41</td><td>马克莱莱</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>42</td><td>库尔图瓦</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>43</td><td>马塞洛</td><td>LB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>44</td><td>本泽马</td><td>ST</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>45</td><td>卡塞米罗</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>46</td><td>卡纳瓦罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>47</td><td>卡纳瓦罗</td><td>CB</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>48</td><td>卡西利亚斯</td><td>GK</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>49</td><td>马塞洛</td><td>LB</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>50</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>51</td><td>本泽马</td><td>ST</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>52</td><td>伊万·萨莫拉诺</td><td>ST</td><td>26名宿(26HR)</td><td>137</td></tr>
+<tr><td>53</td><td>库尔图瓦</td><td>GK</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>54</td><td>特奥·埃尔南德斯</td><td>LB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>55</td><td>库尔图瓦</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>56</td><td>维尼修斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>57</td><td>卡塞米罗</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>58</td><td>特奥·埃尔南德斯</td><td>LB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>59</td><td>卡塞米罗</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>60</td><td>楚阿梅尼</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>61</td><td>库库雷利亚</td><td>LB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>62</td><td>贝克汉姆</td><td>RM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>63</td><td>耶罗</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>64</td><td>斯内德</td><td>CAM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>65</td><td>斯内德</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>66</td><td>阿扎尔</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>67</td><td>哈吉</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>68</td><td>耶罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>69</td><td>阿扎尔</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>70</td><td>贝克汉姆</td><td>RM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>71</td><td>库库雷利亚</td><td>LB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>72</td><td>M. 萨尔加多·费尔南德斯</td><td>RB</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>73</td><td>阿莱克斯·费巴斯</td><td>CM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>74</td><td>J. 贝林厄姆</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>75</td><td>贝尔</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>76</td><td>普斯卡什</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>77</td><td>莫伦特斯</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>78</td><td>劳尔</td><td>SS</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>79</td><td>M. 萨尔加多·费尔南德斯</td><td>RB</td><td>26名宿(26HR)</td><td>135</td></tr>
+<tr><td>80</td><td>布特拉格诺</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>81</td><td>卡卡</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>82</td><td>T. 亚历山大-阿诺德</td><td>RB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>83</td><td>里卡多·卡瓦略</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>84</td><td>卡瓦哈尔</td><td>RB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>85</td><td>阿拉巴</td><td>LB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>86</td><td>M. 劳德鲁普</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>87</td><td>埃辛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>88</td><td>埃辛</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>89</td><td>坎比亚索</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>90</td><td>乌戈·桑切斯</td><td>ST</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>91</td><td>法比尼奥</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>92</td><td>博纳多·席尔瓦</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>93</td><td>阿尔比奥尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>94</td><td>博纳多·席尔瓦</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>95</td><td>D. 邓弗里斯</td><td>RB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>96</td><td>费兰·门迪</td><td>LB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>97</td><td>居莱尔</td><td>CAM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>98</td><td>科纳特</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>99</td><td>吕迪格</td><td>CB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>100</td><td>Y. 迪奥曼德</td><td>LW</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（25人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">耶罗</span>
+<span class="chip icon-chip">哈吉</span>
+<span class="chip icon-chip">布特拉格诺</span>
+<span class="chip icon-chip">马克莱莱</span>
+<span class="chip icon-chip">劳尔</span>
+<span class="chip icon-chip">D. 苏克</span>
+<span class="chip icon-chip">哈维·阿隆索</span>
+<span class="chip icon-chip">马塞洛</span>
+<span class="chip icon-chip">M. 劳德鲁普</span>
+<span class="chip icon-chip">罗伯特·卡洛斯</span>
+<span class="chip icon-chip">托尼·克罗斯</span>
+<span class="chip icon-chip">范尼斯特鲁伊</span>
+<span class="chip icon-chip">乌戈·桑切斯</span>
+<span class="chip icon-chip">欧文</span>
+<span class="chip icon-chip">普斯卡什</span>
+<span class="chip icon-chip">卡卡</span>
+<span class="chip icon-chip">卡纳瓦罗</span>
+<span class="chip icon-chip">罗纳尔多</span>
+<span class="chip icon-chip">卡西利亚斯</span>
+<span class="chip icon-chip">齐达内</span>
+<span class="chip icon-chip">埃托奥</span>
+<span class="chip icon-chip">路易斯菲戈</span>
+<span class="chip icon-chip">贝尔</span>
+<span class="chip icon-chip">埃辛</span>
+<span class="chip icon-chip">贝克汉姆</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-2" class="pack-section">
+<h3 class="pack-title">切尔西甄选80人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：80人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>埃托奥</td><td>ST</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>2</td><td>埃托奥</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>3</td><td>法布雷加斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>4</td><td>埃托奥</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>5</td><td>德罗巴</td><td>ST</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>6</td><td>德罗巴</td><td>ST</td><td>马年传奇：一马当先</td><td>139</td></tr>
+<tr><td>7</td><td>德罗巴</td><td>ST</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>8</td><td>德罗巴</td><td>ST</td><td>马年传奇：马到成功</td><td>139</td></tr>
+<tr><td>9</td><td>德罗巴</td><td>ST</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>10</td><td>若昂·佩德罗</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>11</td><td>马克莱莱</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>12</td><td>里斯·詹姆斯</td><td>RB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>13</td><td>马克莱莱</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>14</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>15</td><td>马克莱莱</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>16</td><td>库尔图瓦</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>17</td><td>恩佐-费尔南德斯</td><td>CM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>18</td><td>库尔图瓦</td><td>GK</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>19</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>20</td><td>库尔图瓦</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>21</td><td>M. 萨尔</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>22</td><td>菲利克斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>23</td><td>恩佐-费尔南德斯</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>24</td><td>里斯·詹姆斯</td><td>RB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>25</td><td>库库雷利亚</td><td>LB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>26</td><td>阿扎尔</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>27</td><td>兰帕德</td><td>CM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>28</td><td>德塞利</td><td>CB</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>29</td><td>德塞利</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>30</td><td>德布劳内</td><td>CAM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>31</td><td>兰帕德</td><td>CM</td><td>马年传奇：马到成功</td><td>136</td></tr>
+<tr><td>32</td><td>阿扎尔</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>33</td><td>德布劳内</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>34</td><td>M. 帕莱斯特拉</td><td>RWB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>35</td><td>库库雷利亚</td><td>LB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>36</td><td>贝隆</td><td>CAM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>37</td><td>斯特林</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>38</td><td>佐拉</td><td>SS</td><td>马年传奇：马到成功</td><td>135</td></tr>
+<tr><td>39</td><td>克劳迪奥·皮萨罗</td><td>ST</td><td>26名宿(26HR)</td><td>135</td></tr>
+<tr><td>40</td><td>贝隆</td><td>CAM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>41</td><td>丹尼·维尔贝克</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>42</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>43</td><td>克雷斯波</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>44</td><td>埃辛</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>45</td><td>里卡多·卡瓦略</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>46</td><td>坎特</td><td>CDM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>47</td><td>舍甫琴科</td><td>ST</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>48</td><td>胡安·夸德拉多</td><td>RWB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>49</td><td>亚伯拉罕</td><td>ST</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>50</td><td>夸雷斯马</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>51</td><td>蒂莫·维尔纳</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>52</td><td>佩德罗</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>53</td><td>夸雷斯马</td><td>LW</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>54</td><td>克雷斯波</td><td>ST</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>55</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>56</td><td>里卡多·卡瓦略</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>57</td><td>萨拉赫</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>58</td><td>哈弗茨</td><td>CAM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>59</td><td>埃辛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>60</td><td>佩蒂特</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>61</td><td>萨拉赫</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>62</td><td>阿什利·科尔</td><td>LB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>63</td><td>M. 凯塞多</td><td>CDM</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>64</td><td>费尔南多·托雷斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>65</td><td>马科斯·阿隆索</td><td>LWB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>66</td><td>M. 凯塞多</td><td>CDM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>67</td><td>切赫</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>68</td><td>阿什利·科尔</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>69</td><td>古利特</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>70</td><td>加拉格尔</td><td>CM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>71</td><td>马蒂奇</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>72</td><td>维亚利</td><td>ST</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>73</td><td>F. 托莫里</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>74</td><td>吉鲁</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>75</td><td>乔·科尔</td><td>RM</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>76</td><td>乔·科尔</td><td>RM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>77</td><td>拉米雷斯</td><td>CDM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>78</td><td>赞帕科斯塔</td><td>LWB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>79</td><td>M. 古斯图</td><td>RB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>80</td><td>吕迪格</td><td>CB</td><td>世界群英(PTG)</td><td>124</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（15人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">贝隆</span>
+<span class="chip icon-chip">马克莱莱</span>
+<span class="chip icon-chip">克雷斯波</span>
+<span class="chip icon-chip">佩蒂特</span>
+<span class="chip icon-chip">德塞利</span>
+<span class="chip icon-chip">兰帕德</span>
+<span class="chip icon-chip">佐拉</span>
+<span class="chip icon-chip">埃辛</span>
+<span class="chip icon-chip">费尔南多·托雷斯</span>
+<span class="chip icon-chip">阿什利·科尔</span>
+<span class="chip icon-chip">德罗巴</span>
+<span class="chip icon-chip">古利特</span>
+<span class="chip icon-chip">埃托奥</span>
+<span class="chip icon-chip">舍甫琴科</span>
+<span class="chip icon-chip">切赫</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-3" class="pack-section">
+<h3 class="pack-title">红蓝军团甄选80人球员包8-10强（含传奇时刻1强球员）-2609</h3>
+<div class="player-count">非ICON球员：80人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>拉明·亚马尔</td><td>LW</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>2</td><td>拉明·亚马尔</td><td>LW</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>3</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>4</td><td>埃托奥</td><td>ST</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>5</td><td>路易斯菲戈</td><td>LW</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>6</td><td>埃托奥</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>7</td><td>马拉多纳</td><td>SS</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>8</td><td>佩德里</td><td>CM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>9</td><td>马拉多纳</td><td>SS</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>10</td><td>马拉多纳</td><td>SS</td><td>马年传奇：一马当先</td><td>140</td></tr>
+<tr><td>11</td><td>马拉多纳</td><td>SS</td><td>马年传奇：马到成功</td><td>140</td></tr>
+<tr><td>12</td><td>法布雷加斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>13</td><td>路易斯菲戈</td><td>LW</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>14</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>15</td><td>埃托奥</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>16</td><td>佩德里</td><td>CM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>17</td><td>罗纳德·科曼</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>18</td><td>罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>19</td><td>罗纳德·科曼</td><td>CB</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>20</td><td>克鲁伊夫</td><td>SS</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>21</td><td>梅西</td><td>SS</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>22</td><td>梅西</td><td>SS</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>23</td><td>罗纳尔多</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>24</td><td>梅西</td><td>SS</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>25</td><td>奥斯曼·登贝莱</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>26</td><td>马斯切拉诺</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>27</td><td>罗纳尔迪尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>28</td><td>罗纳尔迪尼奥</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>29</td><td>马斯切拉诺</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>30</td><td>格里马尔多</td><td>LM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>31</td><td>A. 戈登</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>32</td><td>H. 斯托伊奇科夫</td><td>LW</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>33</td><td>罗纳尔迪尼奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>34</td><td>马斯切拉诺</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>35</td><td>里瓦尔多</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>36</td><td>琼·加西亚</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>37</td><td>格里马尔多</td><td>LM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>38</td><td>拉菲尼亚</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>39</td><td>埃里克·加西亚</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>40</td><td>菲利克斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>41</td><td>库巴西</td><td>CB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>42</td><td>伊涅斯塔</td><td>LW</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>43</td><td>哈维</td><td>CM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>44</td><td>L. 图拉姆</td><td>RB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>45</td><td>哈吉</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>46</td><td>亨利</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>47</td><td>G. 莱因克尔</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>48</td><td>路易斯·苏亚雷斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>49</td><td>亨利</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>50</td><td>莱万多夫斯基</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>51</td><td>哈维</td><td>CM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>52</td><td>伊涅斯塔</td><td>LW</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>53</td><td>库库雷利亚</td><td>LB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>54</td><td>A. 埃扎洛佐利</td><td>LW</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>55</td><td>特林康</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>56</td><td>库巴西</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>57</td><td>库库雷利亚</td><td>LB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>58</td><td>孟菲斯·德佩</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>59</td><td>阿莱克斯·桑切斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>60</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>61</td><td>佩蒂特</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>62</td><td>L. 布兰科</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>63</td><td>夸雷斯马</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>64</td><td>M. 劳德鲁普</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>65</td><td>佩德罗</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>66</td><td>夸雷斯马</td><td>LW</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>67</td><td>赞布罗塔</td><td>RB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>68</td><td>里克尔梅</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>69</td><td>马克斯</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>70</td><td>K. 卡雷维奇</td><td>GK</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>71</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>72</td><td>马科斯·阿隆索</td><td>LWB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>73</td><td>罗德里</td><td>CDM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>74</td><td>亚亚·图雷</td><td>CM</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>75</td><td>格列兹曼</td><td>SS</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>76</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>77</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>78</td><td>孔德</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>79</td><td>内马尔</td><td>CAM</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>80</td><td>纳尔逊·塞梅多</td><td>RB</td><td>世界群英(PTG)</td><td>126</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（24人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">里克尔梅</span>
+<span class="chip icon-chip">G. 莱因克尔</span>
+<span class="chip icon-chip">哈维</span>
+<span class="chip icon-chip">哈吉</span>
+<span class="chip icon-chip">里瓦尔多</span>
+<span class="chip icon-chip">佩蒂特</span>
+<span class="chip icon-chip">H. 斯托伊奇科夫</span>
+<span class="chip icon-chip">H. 拉尔森</span>
+<span class="chip icon-chip">M. 劳德鲁普</span>
+<span class="chip icon-chip">克鲁伊维特</span>
+<span class="chip icon-chip">罗纳德·科曼</span>
+<span class="chip icon-chip">J. 利特马宁</span>
+<span class="chip icon-chip">伊涅斯塔</span>
+<span class="chip icon-chip">赞布罗塔</span>
+<span class="chip icon-chip">马拉多纳</span>
+<span class="chip icon-chip">罗纳尔多</span>
+<span class="chip icon-chip">亨利</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">埃托奥</span>
+<span class="chip icon-chip">路易斯菲戈</span>
+<span class="chip icon-chip">罗纳尔迪尼奥</span>
+<span class="chip icon-chip">亚亚·图雷</span>
+<span class="chip icon-chip">L. 图拉姆</span>
+<span class="chip icon-chip">克鲁伊夫</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-4" class="pack-section">
+<h3 class="pack-title">拜仁慕尼黑甄选80人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：80人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>哈里·凯恩</td><td>ST</td><td>连胜浪潮(WS)</td><td>141</td></tr>
+<tr><td>2</td><td>奥利塞</td><td>LW</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>3</td><td>哈里·凯恩</td><td>ST</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>4</td><td>奥利塞</td><td>LW</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>5</td><td>哈里·凯恩</td><td>ST</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>6</td><td>路易斯·迪亚斯</td><td>LW</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>7</td><td>马特乌斯</td><td>CM</td><td>马年传奇：一马当先</td><td>140</td></tr>
+<tr><td>8</td><td>马特乌斯</td><td>CM</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>9</td><td>马特乌斯</td><td>CM</td><td>马年传奇：马到成功</td><td>140</td></tr>
+<tr><td>10</td><td>路易斯·迪亚斯</td><td>LW</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>11</td><td>哈维·阿隆索</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>12</td><td>哈维·阿隆索</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>13</td><td>基米希</td><td>CDM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>14</td><td>托尼·克罗斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>15</td><td>基米希</td><td>CDM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>16</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：一马当先</td><td>138</td></tr>
+<tr><td>17</td><td>托尼·克罗斯</td><td>CM</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>18</td><td>盖德·穆勒</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>19</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：马到成功</td><td>138</td></tr>
+<tr><td>20</td><td>贝肯鲍尔</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>21</td><td>基米希</td><td>CDM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>22</td><td>格纳布里</td><td>SS</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>23</td><td>卡恩</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>24</td><td>J. 塔</td><td>CB</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>25</td><td>克洛泽</td><td>ST</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>26</td><td>罗伊·马凯</td><td>ST</td><td>26名宿(26HR)</td><td>137</td></tr>
+<tr><td>27</td><td>卡恩</td><td>GK</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>28</td><td>卡恩</td><td>GK</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>29</td><td>I. 赛巴里</td><td>CAM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>30</td><td>格纳布里</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>31</td><td>A. 帕夫洛维奇</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>32</td><td>J. 塔</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>33</td><td>于帕梅卡诺</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>34</td><td>拉姆</td><td>CDM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>35</td><td>拉姆</td><td>CDM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>36</td><td>莱万多夫斯基</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>37</td><td>托利索</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>38</td><td>L. 卡尔</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>39</td><td>A·施蒂勒</td><td>CDM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>40</td><td>萨迪奥·马内</td><td>LW</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>41</td><td>萨迪奥·马内</td><td>LW</td><td>马年传奇：一马当先</td><td>135</td></tr>
+<tr><td>42</td><td>乌利·赫内斯</td><td>LM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>43</td><td>里贝里</td><td>LW</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>44</td><td>施魏因斯泰格</td><td>LM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>45</td><td>曼朱基奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>46</td><td>曼朱基奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>47</td><td>乌利·赫内斯</td><td>LM</td><td>26名宿(26HR)</td><td>135</td></tr>
+<tr><td>48</td><td>里贝里</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>49</td><td>克劳迪奥·皮萨罗</td><td>ST</td><td>26名宿(26HR)</td><td>135</td></tr>
+<tr><td>50</td><td>施魏因斯泰格</td><td>LM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>51</td><td>萨迪奥·马内</td><td>LW</td><td>马年传奇：马到成功</td><td>135</td></tr>
+<tr><td>52</td><td>曼朱基奇</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>53</td><td>萨迪奥·马内</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>54</td><td>尤尔根·科勒尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>55</td><td>诺伊尔</td><td>GK</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>56</td><td>卢西奥</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>57</td><td>阿拉巴</td><td>LB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>58</td><td>L. 萨内</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>59</td><td>金玟哉</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>60</td><td>尤尔根·科勒尔</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>61</td><td>利扎拉祖</td><td>LB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>62</td><td>泽·罗伯托</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>63</td><td>格策</td><td>CAM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>64</td><td>多诺万</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>65</td><td>帕瓦尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>66</td><td>帕潘</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>67</td><td>埃姆雷·詹</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>68</td><td>帕里尼亚</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>69</td><td>佩里西奇</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>70</td><td>萨比策</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>71</td><td>戴尔</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>72</td><td>哈梅斯·罗德里格斯</td><td>CAM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>73</td><td>赫拉芬贝赫</td><td>CDM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>74</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>75</td><td>金斯利·科曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>76</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>77</td><td>阿方索·戴维斯</td><td>LB</td><td>连胜浪潮(WS)</td><td>128</td></tr>
+<tr><td>78</td><td>J. 斯坦尼希奇</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>79</td><td>阿方索·戴维斯</td><td>LB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>80</td><td>H. 伊藤</td><td>CB</td><td>世界群英(PTG)</td><td>124</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（10人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">克洛泽</span>
+<span class="chip icon-chip">里贝里</span>
+<span class="chip icon-chip">盖德·穆勒</span>
+<span class="chip icon-chip">哈维·阿隆索</span>
+<span class="chip icon-chip">拉姆</span>
+<span class="chip icon-chip">施魏因斯泰格</span>
+<span class="chip icon-chip">托尼·克罗斯</span>
+<span class="chip icon-chip">卡恩</span>
+<span class="chip icon-chip">马特乌斯</span>
+<span class="chip icon-chip">贝肯鲍尔</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-5" class="pack-section">
+<h3 class="pack-title">曼城甄选70人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：70人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>哈兰德</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>哈兰德</td><td>ST</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>哈兰德</td><td>ST</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>4</td><td>维埃拉</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>5</td><td>维埃拉</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>6</td><td>维埃拉</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>7</td><td>A. 塞梅诺</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>8</td><td>A. 塞梅诺</td><td>LW</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>9</td><td>N. 奥赖利</td><td>LB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>10</td><td>恩佐-费尔南德斯</td><td>CM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>11</td><td>J. 阿尔瓦雷斯</td><td>SS</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>12</td><td>J. 阿尔瓦雷斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>13</td><td>埃里克·加西亚</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>14</td><td>N. 奥赖利</td><td>LB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>15</td><td>多纳鲁马</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>16</td><td>恩佐-费尔南德斯</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>17</td><td>谢尔基</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>18</td><td>兰帕德</td><td>CM</td><td>马年传奇：一马当先</td><td>136</td></tr>
+<tr><td>19</td><td>兰帕德</td><td>CM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>20</td><td>兰帕德</td><td>CM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>21</td><td>德布劳内</td><td>CAM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>22</td><td>兰帕德</td><td>CM</td><td>马年传奇：马到成功</td><td>136</td></tr>
+<tr><td>23</td><td>德布劳内</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>24</td><td>阿历克斯·加西亚</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>25</td><td>M. 阿坎吉</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>26</td><td>马赫雷斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>27</td><td>马赫雷斯</td><td>LW</td><td>马年传奇：一马当先</td><td>135</td></tr>
+<tr><td>28</td><td>哲科</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>29</td><td>马赫雷斯</td><td>LW</td><td>马年传奇：马到成功</td><td>135</td></tr>
+<tr><td>30</td><td>哲科</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>31</td><td>斯特林</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>32</td><td>M. 佩罗内</td><td>CDM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>33</td><td>鲁本·迪亚斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>34</td><td>鲁本·迪亚斯</td><td>CB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>35</td><td>L. 萨内</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>36</td><td>L. 萨内</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>37</td><td>J. 多库</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>38</td><td>福登</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>39</td><td>特维斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>40</td><td>麦孔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>41</td><td>特维斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>42</td><td>特里皮尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>43</td><td>埃德森</td><td>GK</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>44</td><td>Y. 埃雷拉</td><td>CM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>45</td><td>理查兹</td><td>RB</td><td>26名宿(26HR)</td><td>133</td></tr>
+<tr><td>46</td><td>京多安</td><td>CM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>47</td><td>孔帕尼</td><td>CB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>48</td><td>麦孔</td><td>RB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>49</td><td>埃德森</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>50</td><td>彼得·舒梅切尔</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>51</td><td>麦孔</td><td>RB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>52</td><td>罗德里</td><td>CDM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>53</td><td>史蒂芬·萨维奇</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>54</td><td>博纳多·席尔瓦</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>55</td><td>亚亚·图雷</td><td>CM</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>56</td><td>博纳多·席尔瓦</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>57</td><td>奥塔门迪</td><td>CB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>58</td><td>凯尔·沃克</td><td>RB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>59</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>60</td><td>卜拉辛·迪亚斯</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>61</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>62</td><td>热苏斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>63</td><td>斯通斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>64</td><td>比斯利</td><td>LM</td><td>世界荣耀(WG)</td><td>130</td></tr>
+<tr><td>65</td><td>J. 格瓦迪奥尔</td><td>LB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>66</td><td>A. 古恩</td><td>GK</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>67</td><td>M. 盖希</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>68</td><td>板仓滉</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>69</td><td>A. 库萨诺夫</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>70</td><td>纳桑·阿克</td><td>LB</td><td>世界群英(PTG)</td><td>125</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（4人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">兰帕德</span>
+<span class="chip icon-chip">彼得·舒梅切尔</span>
+<span class="chip icon-chip">维埃拉</span>
+<span class="chip icon-chip">亚亚·图雷</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-6" class="pack-section">
+<h3 class="pack-title">利物浦甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>路易斯·迪亚斯</td><td>LW</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>2</td><td>路易斯·迪亚斯</td><td>LW</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>3</td><td>哈维·阿隆索</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>4</td><td>阿斯帕斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>5</td><td>哈维·阿隆索</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>6</td><td>范戴克</td><td>CB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>7</td><td>范戴克</td><td>CB</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>8</td><td>D. 索博斯洛伊</td><td>CAM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>9</td><td>范戴克</td><td>CB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>10</td><td>马斯切拉诺</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>11</td><td>马斯切拉诺</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>12</td><td>马斯切拉诺</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>13</td><td>哈里·威尔逊</td><td>LW</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>14</td><td>路易斯·苏亚雷斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>15</td><td>萨迪奥·马内</td><td>LW</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>16</td><td>萨迪奥·马内</td><td>LW</td><td>马年传奇：一马当先</td><td>135</td></tr>
+<tr><td>17</td><td>F. 维尔茨</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>18</td><td>F. 维尔茨</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>19</td><td>斯特林</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>20</td><td>库伊特</td><td>LW</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>21</td><td>萨迪奥·马内</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>22</td><td>莫伦特斯</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>23</td><td>萨迪奥·马内</td><td>LW</td><td>马年传奇：马到成功</td><td>135</td></tr>
+<tr><td>24</td><td>罗伯逊</td><td>LB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>25</td><td>T. 亚历山大-阿诺德</td><td>RB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>26</td><td>萨拉赫</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>27</td><td>萨拉赫</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>28</td><td>杰拉德</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>29</td><td>阿利松</td><td>GK</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>30</td><td>J. 弗林蓬</td><td>RWB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>31</td><td>罗比·基恩</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>32</td><td>费尔南多·托雷斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>33</td><td>阿利松</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>34</td><td>埃姆雷·詹</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>35</td><td>加克波</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>36</td><td>约翰·巴恩斯</td><td>LW</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>37</td><td>法比尼奥</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>38</td><td>范登贝尔赫</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>39</td><td>赫拉芬贝赫</td><td>CDM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>40</td><td>乔·科尔</td><td>RM</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>41</td><td>乔·科尔</td><td>RM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>42</td><td>H. 科威尔</td><td>SS</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>43</td><td>乔·科尔</td><td>RM</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>44</td><td>克劳奇</td><td>ST</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>45</td><td>乔·戈麦斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>46</td><td>J. 卡拉格</td><td>CB</td><td>世界荣耀(WG)</td><td>129</td></tr>
+<tr><td>47</td><td>麦卡利斯特</td><td>CM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>48</td><td>B. 甘农-多克</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>49</td><td>科纳特</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>50</td><td>欧文</td><td>ST</td><td>世界荣耀(WG)</td><td>123</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（9人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">约翰·巴恩斯</span>
+<span class="chip icon-chip">J. 卡拉格</span>
+<span class="chip icon-chip">哈维·阿隆索</span>
+<span class="chip icon-chip">J. 利特马宁</span>
+<span class="chip icon-chip">伊恩·拉什</span>
+<span class="chip icon-chip">欧文</span>
+<span class="chip icon-chip">达格利什</span>
+<span class="chip icon-chip">杰拉德</span>
+<span class="chip icon-chip">费尔南多·托雷斯</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-7" class="pack-section">
+<h3 class="pack-title">巴黎圣日耳曼甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>姆巴佩</td><td>ST</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>2</td><td>姆巴佩</td><td>ST</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>3</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>4</td><td>维蒂尼亚</td><td>CM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>5</td><td>维蒂尼亚</td><td>CM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>6</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>7</td><td>奥斯曼·登贝莱</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>8</td><td>努诺·门德斯</td><td>LB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>9</td><td>克瓦拉茨赫利亚</td><td>LW</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>10</td><td>X. 西蒙斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>11</td><td>梅西</td><td>SS</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>12</td><td>梅西</td><td>SS</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>13</td><td>梅西</td><td>SS</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>14</td><td>克瓦拉茨赫利亚</td><td>LW</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>15</td><td>奥斯曼·登贝莱</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>16</td><td>努诺·门德斯</td><td>LB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>17</td><td>马克莱莱</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>18</td><td>布冯</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>19</td><td>马克莱莱</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>20</td><td>罗纳尔迪尼奥</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>21</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>22</td><td>马克莱莱</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>23</td><td>罗纳尔迪尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>24</td><td>拉比奥特</td><td>CM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>25</td><td>罗纳尔迪尼奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>26</td><td>布冯</td><td>GK</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>27</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>28</td><td>M. 戈茨</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>29</td><td>拉比奥特</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>30</td><td>多纳鲁马</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>31</td><td>贝克汉姆</td><td>RM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>32</td><td>贝克汉姆</td><td>RM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>33</td><td>盖耶</td><td>CDM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>34</td><td>B. 巴科拉</td><td>LW</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>35</td><td>W. 帕乔</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>36</td><td>W. 埃梅里</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>37</td><td>M. 迈尼昂</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>38</td><td>尤里·贝尔奇奇</td><td>LB</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>39</td><td>M. 阿克利乌什</td><td>RM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>40</td><td>大卫·吉诺拉</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>41</td><td>马图伊迪</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>42</td><td>马图伊迪</td><td>CM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>43</td><td>冈萨洛·格德斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>44</td><td>什克里尼亚尔</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>45</td><td>马尔基尼奥斯</td><td>CB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>46</td><td>金斯利·科曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>47</td><td>李刚仁</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>48</td><td>M. 乌加特</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>49</td><td>穆尼耶</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>50</td><td>内马尔</td><td>CAM</td><td>世界群英(PTG)</td><td>128</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（6人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">马克莱莱</span>
+<span class="chip icon-chip">奥科查</span>
+<span class="chip icon-chip">贝克汉姆</span>
+<span class="chip icon-chip">布冯</span>
+<span class="chip icon-chip">罗纳尔迪尼奥</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-8" class="pack-section">
+<h3 class="pack-title">兵工厂甄选60人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：60人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>法布雷加斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>加布里埃尔</td><td>CB</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>法布雷加斯</td><td>CM</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>赖斯</td><td>CM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>5</td><td>法布雷加斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>6</td><td>加布里埃尔</td><td>CB</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>7</td><td>赖斯</td><td>CM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>8</td><td>维埃拉</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>9</td><td>维埃拉</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>10</td><td>伊恩·赖特</td><td>ST</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>11</td><td>维埃拉</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>12</td><td>W. 萨利巴</td><td>CB</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>13</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>14</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>15</td><td>D. 苏克</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>16</td><td>D. 苏克</td><td>ST</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>17</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>18</td><td>大卫·拉亚</td><td>GK</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>19</td><td>扎卡</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>20</td><td>扎卡</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>21</td><td>J. 廷贝尔</td><td>RB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>22</td><td>格纳布里</td><td>SS</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>23</td><td>扎卡</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>24</td><td>J. 廷贝尔</td><td>RB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>25</td><td>格纳布里</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>26</td><td>博格坎普</td><td>SS</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>27</td><td>迈克尔梅里诺</td><td>CM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>28</td><td>迈克尔梅里诺</td><td>CM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>29</td><td>亨利</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>30</td><td>亨利</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>31</td><td>博格坎普</td><td>SS</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>32</td><td>阿莱克斯·桑切斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>33</td><td>范佩西</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>34</td><td>斯特林</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>35</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>36</td><td>丹尼·维尔贝克</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>37</td><td>J. 基维奥尔</td><td>CB</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>38</td><td>吉尔伯托·席尔瓦</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>39</td><td>吉尔伯托·席尔瓦</td><td>CDM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>40</td><td>哈弗茨</td><td>CAM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>41</td><td>佩蒂特</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>42</td><td>切赫</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>43</td><td>切赫</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>44</td><td>阿什利·科尔</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>45</td><td>坎贝尔</td><td>CB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>46</td><td>阿什利·科尔</td><td>LB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>47</td><td>R. 皮雷斯</td><td>LM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>48</td><td>坎贝尔</td><td>CB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>49</td><td>罗西基</td><td>CAM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>50</td><td>热尔维尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>51</td><td>厄德高</td><td>CAM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>52</td><td>永贝里</td><td>LW</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>53</td><td>永贝里</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>54</td><td>吉鲁</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>55</td><td>因卡皮耶</td><td>CB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>56</td><td>贝莱林</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>57</td><td>热苏斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>58</td><td>苏比门迪</td><td>CDM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>59</td><td>E. 马丁内斯</td><td>GK</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>60</td><td>M. 刘易斯·斯凯利</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（12人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">伊恩·赖特</span>
+<span class="chip icon-chip">R. 皮雷斯</span>
+<span class="chip icon-chip">D. 苏克</span>
+<span class="chip icon-chip">佩蒂特</span>
+<span class="chip icon-chip">坎贝尔</span>
+<span class="chip icon-chip">范佩西</span>
+<span class="chip icon-chip">永贝里</span>
+<span class="chip icon-chip">博格坎普</span>
+<span class="chip icon-chip">维埃拉</span>
+<span class="chip icon-chip">亨利</span>
+<span class="chip icon-chip">切赫</span>
+<span class="chip icon-chip">阿什利·科尔</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-9" class="pack-section">
+<h3 class="pack-title">红黑军团甄选80人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：80人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>3</td><td>莫德里奇</td><td>CM</td><td>世界群英(PTG)</td><td>139</td></tr>
+<tr><td>4</td><td>莫德里奇</td><td>CM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>5</td><td>维埃拉</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>6</td><td>马尔蒂尼</td><td>CB</td><td>马年传奇：一马当先</td><td>139</td></tr>
+<tr><td>7</td><td>维埃拉</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>8</td><td>马尔蒂尼</td><td>CB</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>9</td><td>马尔蒂尼</td><td>CB</td><td>马年传奇：马到成功</td><td>139</td></tr>
+<tr><td>10</td><td>维埃拉</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>11</td><td>莫德里奇</td><td>CM</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>12</td><td>恰尔汗奥卢</td><td>CM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>13</td><td>罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>14</td><td>恰尔汗奥卢</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>15</td><td>罗纳尔多</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>16</td><td>拉比奥特</td><td>CM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>17</td><td>罗纳尔迪尼奥</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>18</td><td>洛卡特利</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>19</td><td>罗纳尔迪尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>20</td><td>巴乔</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>21</td><td>罗纳尔迪尼奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>22</td><td>里瓦尔多</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>23</td><td>洛卡特利</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>24</td><td>特奥·埃尔南德斯</td><td>LB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>25</td><td>菲利克斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>26</td><td>拉比奥特</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>27</td><td>多纳鲁马</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>28</td><td>特奥·埃尔南德斯</td><td>LB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>29</td><td>内斯塔</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>30</td><td>贝克汉姆</td><td>RM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>31</td><td>M. 迈尼昂</td><td>GK</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>32</td><td>德塞利</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>33</td><td>内斯塔</td><td>CB</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>34</td><td>卡福</td><td>RB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>35</td><td>德塞利</td><td>CB</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>36</td><td>A. 萨摩耶克</td><td>RWB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>37</td><td>M. 迈尼昂</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>38</td><td>贝克汉姆</td><td>RM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>39</td><td>曼朱基奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>40</td><td>曼朱基奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>41</td><td>加图索</td><td>CDM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>42</td><td>比埃尔霍夫</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>43</td><td>巴雷西</td><td>CB</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>44</td><td>加图索</td><td>CDM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>45</td><td>曼朱基奇</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>46</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>47</td><td>皮尔洛</td><td>CM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>48</td><td>埃辛</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>49</td><td>卡卡</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>50</td><td>舍甫琴科</td><td>ST</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>51</td><td>亚伯拉罕</td><td>ST</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>52</td><td>斯塔姆</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>53</td><td>拉斐尔·莱奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>54</td><td>赞布罗塔</td><td>RB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>55</td><td>克雷斯波</td><td>ST</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>56</td><td>埃辛</td><td>CDM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>57</td><td>斯塔姆</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>58</td><td>克雷斯波</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>59</td><td>埃辛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>60</td><td>古利特</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>61</td><td>帕潘</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>62</td><td>费尔南多·托雷斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>63</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>64</td><td>里杰卡尔德</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>65</td><td>罗马尼奥利</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>66</td><td>凯西</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>67</td><td>凯西</td><td>CM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>68</td><td>S. 托纳利</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>69</td><td>S. 托纳利</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>70</td><td>吉鲁</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>71</td><td>F. 托莫里</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>72</td><td>凯尔·沃克</td><td>RB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>73</td><td>范巴斯滕</td><td>ST</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>74</td><td>卜拉辛·迪亚斯</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>75</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>76</td><td>M. 帕沙利奇</td><td>CM</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>77</td><td>P. 卡鲁路</td><td>CB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>78</td><td>P. 埃斯图皮南</td><td>LWB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>79</td><td>德凯特拉雷</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>80</td><td>德凯特拉雷</td><td>ST</td><td>连胜浪潮(WS)</td><td>129</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（27人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">比埃尔霍夫</span>
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">鲁伊·科斯塔</span>
+<span class="chip icon-chip">克雷斯波</span>
+<span class="chip icon-chip">里瓦尔多</span>
+<span class="chip icon-chip">德塞利</span>
+<span class="chip icon-chip">克鲁伊维特</span>
+<span class="chip icon-chip">卡福</span>
+<span class="chip icon-chip">加图索</span>
+<span class="chip icon-chip">皮尔洛</span>
+<span class="chip icon-chip">赞布罗塔</span>
+<span class="chip icon-chip">维埃拉</span>
+<span class="chip icon-chip">范巴斯滕</span>
+<span class="chip icon-chip">巴雷西</span>
+<span class="chip icon-chip">卡卡</span>
+<span class="chip icon-chip">古利特</span>
+<span class="chip icon-chip">罗纳尔多</span>
+<span class="chip icon-chip">马尔蒂尼</span>
+<span class="chip icon-chip">里杰卡尔德</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">舍甫琴科</span>
+<span class="chip icon-chip">内斯塔</span>
+<span class="chip icon-chip">埃辛</span>
+<span class="chip icon-chip">费尔南多·托雷斯</span>
+<span class="chip icon-chip">贝克汉姆</span>
+<span class="chip icon-chip">罗纳尔迪尼奥</span>
+<span class="chip icon-chip">巴乔</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-10" class="pack-section">
+<h3 class="pack-title">红魔甄选70人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：70人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>4</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>5</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>6</td><td>罗伊·基恩</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>7</td><td>罗伊·基恩</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>8</td><td>罗伊·基恩</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>9</td><td>里奥·费迪南德</td><td>CB</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>10</td><td>C. 罗纳尔多</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>11</td><td>里奥·费迪南德</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>12</td><td>里奥·费迪南德</td><td>CB</td><td>马年传奇：一马当先</td><td>138</td></tr>
+<tr><td>13</td><td>里奥·费迪南德</td><td>CB</td><td>马年传奇：马到成功</td><td>138</td></tr>
+<tr><td>14</td><td>C. 罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>15</td><td>C. 罗纳尔多</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>16</td><td>卡塞米罗</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>17</td><td>麦克托米奈</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>18</td><td>弗兰</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>19</td><td>卡塞米罗</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>20</td><td>卡塞米罗</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>21</td><td>贝克汉姆</td><td>RM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>22</td><td>坎通纳</td><td>ST</td><td>马年传奇：一马当先</td><td>136</td></tr>
+<tr><td>23</td><td>坎通纳</td><td>ST</td><td>马年传奇：马到成功</td><td>136</td></tr>
+<tr><td>24</td><td>B. 查尔顿</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>25</td><td>贝克汉姆</td><td>RM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>26</td><td>鲁尼</td><td>SS</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>27</td><td>贝隆</td><td>CAM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>28</td><td>施魏因斯泰格</td><td>LM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>29</td><td>斯科尔斯</td><td>CM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>30</td><td>鲁尼</td><td>SS</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>31</td><td>范佩西</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>32</td><td>贝隆</td><td>CAM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>33</td><td>施魏因斯泰格</td><td>LM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>34</td><td>斯科尔斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>35</td><td>孟菲斯·德佩</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>36</td><td>阿莱克斯·桑切斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>37</td><td>丹尼·维尔贝克</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>38</td><td>霍伊伦</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>39</td><td>维迪奇</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>40</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>41</td><td>维迪奇</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>42</td><td>斯塔姆</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>43</td><td>范德萨</td><td>GK</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>44</td><td>L. 布兰科</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>45</td><td>范德萨</td><td>GK</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>46</td><td>斯塔姆</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>47</td><td>特维斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>48</td><td>马特乌斯·库尼亚</td><td>SS</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>49</td><td>朴智星</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>50</td><td>霍华德</td><td>GK</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>51</td><td>霍华德</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>52</td><td>特维斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>53</td><td>朴智星</td><td>LW</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>54</td><td>彼得·舒梅切尔</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>55</td><td>萨比策</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>56</td><td>费莱尼</td><td>CM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>57</td><td>卡里克</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>58</td><td>贝尔巴托夫</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>59</td><td>蒂莱曼斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>60</td><td>蒂莱曼斯</td><td>CM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>61</td><td>马奎尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>62</td><td>马蒂奇</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>63</td><td>费莱尼</td><td>CM</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>64</td><td>M. 乌加特</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>65</td><td>S. 阿姆拉巴特</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>66</td><td>万比萨卡</td><td>RB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>67</td><td>阿玛德</td><td>CAM</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>68</td><td>N. 马兹拉维</td><td>LB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>69</td><td>欧文</td><td>ST</td><td>世界荣耀(WG)</td><td>123</td></tr>
+<tr><td>70</td><td>H. 拉尔森</td><td>ST</td><td>世界荣耀(WG)</td><td>121</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（20人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">贝隆</span>
+<span class="chip icon-chip">H. 拉尔森</span>
+<span class="chip icon-chip">坎通纳</span>
+<span class="chip icon-chip">斯科尔斯</span>
+<span class="chip icon-chip">施魏因斯泰格</span>
+<span class="chip icon-chip">索尔斯克亚</span>
+<span class="chip icon-chip">范佩西</span>
+<span class="chip icon-chip">范尼斯特鲁伊</span>
+<span class="chip icon-chip">欧文</span>
+<span class="chip icon-chip">罗伊·基恩</span>
+<span class="chip icon-chip">彼得·舒梅切尔</span>
+<span class="chip icon-chip">里奥·费迪南德</span>
+<span class="chip icon-chip">朴智星</span>
+<span class="chip icon-chip">B. 查尔顿</span>
+<span class="chip icon-chip">鲁尼</span>
+<span class="chip icon-chip">G. 贝斯特</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">维迪奇</span>
+<span class="chip icon-chip">贝克汉姆</span>
+<span class="chip icon-chip">范德萨</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-11" class="pack-section">
+<h3 class="pack-title">尤文图斯甄选70人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：70人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>3</td><td>维埃拉</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>4</td><td>维埃拉</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>5</td><td>维埃拉</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>6</td><td>马尔基西奥</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>7</td><td>C. 罗纳尔多</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>8</td><td>K. 伊尔迪兹</td><td>LW</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>9</td><td>齐达内</td><td>CAM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>10</td><td>马尔基西奥</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>11</td><td>齐达内</td><td>CAM</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>12</td><td>贝拉尔迪</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>13</td><td>K. 伊尔迪兹</td><td>LW</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>14</td><td>C. 罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>15</td><td>C. 罗纳尔多</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>16</td><td>洛卡特利</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>17</td><td>布冯</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>18</td><td>布雷默</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>19</td><td>拉比奥特</td><td>CM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>20</td><td>布冯</td><td>GK</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>21</td><td>卡纳瓦罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>22</td><td>巴乔</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>23</td><td>卡纳瓦罗</td><td>CB</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>24</td><td>拉比奥特</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>25</td><td>布雷默</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>26</td><td>洛卡特利</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>27</td><td>亨利</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>28</td><td>W. 麦克凯尼</td><td>RM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>29</td><td>L. 图拉姆</td><td>RB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>30</td><td>亨利</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>31</td><td>基耶利尼</td><td>CB</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>32</td><td>曼朱基奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>33</td><td>基耶利尼</td><td>CB</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>34</td><td>曼朱基奇</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>35</td><td>曼朱基奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>36</td><td>皮尔洛</td><td>CM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>37</td><td>基耶利尼</td><td>CB</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>38</td><td>迪巴拉</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>39</td><td>尤尔根·科勒尔</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>40</td><td>M. 劳德鲁普</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>41</td><td>赞布罗塔</td><td>RB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>42</td><td>范德萨</td><td>GK</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>43</td><td>尤尔根·科勒尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>44</td><td>卢西奥</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>45</td><td>范德萨</td><td>GK</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>46</td><td>胡安·夸德拉多</td><td>RWB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>47</td><td>巴尔扎利</td><td>CB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>48</td><td>特维斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>49</td><td>巴尔扎利</td><td>CB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>50</td><td>马图伊迪</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>51</td><td>马图伊迪</td><td>CM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>52</td><td>特维斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>53</td><td>P. 内德维德</td><td>CAM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>54</td><td>C. 罗梅罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>55</td><td>P. 内德维德</td><td>CAM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>56</td><td>C. 罗梅罗</td><td>CB</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>57</td><td>本坦库尔</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>58</td><td>维亚利</td><td>ST</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>59</td><td>本坦库尔</td><td>CM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>60</td><td>埃姆雷·詹</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>61</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>62</td><td>金斯利·科曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>63</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>64</td><td>P. 卡鲁路</td><td>CB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>65</td><td>J. 卢库米</td><td>CB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>66</td><td>Z. 切利克</td><td>RWB</td><td>连胜浪潮(WS)</td><td>128</td></tr>
+<tr><td>67</td><td>M. 德米拉尔</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>68</td><td>N. 冈萨雷斯</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>69</td><td>K. 阿拉伊贝戈维奇</td><td>LW</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>70</td><td>雷纳托·维加</td><td>CB</td><td>世界群英(PTG)</td><td>125</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（16人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">M. 劳德鲁普</span>
+<span class="chip icon-chip">伊恩·拉什</span>
+<span class="chip icon-chip">基耶利尼</span>
+<span class="chip icon-chip">赞布罗塔</span>
+<span class="chip icon-chip">德尔·皮耶罗</span>
+<span class="chip icon-chip">卡纳瓦罗</span>
+<span class="chip icon-chip">皮尔洛</span>
+<span class="chip icon-chip">维埃拉</span>
+<span class="chip icon-chip">L. 图拉姆</span>
+<span class="chip icon-chip">范德萨</span>
+<span class="chip icon-chip">巴乔</span>
+<span class="chip icon-chip">布冯</span>
+<span class="chip icon-chip">亨利</span>
+<span class="chip icon-chip">齐达内</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">P. 内德维德</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-12" class="pack-section">
+<h3 class="pack-title">内拉祖里甄选70人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：70人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>埃托奥</td><td>ST</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>2</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>3</td><td>路易斯菲戈</td><td>LW</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>埃托奥</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>5</td><td>马特乌斯</td><td>CM</td><td>马年传奇：一马当先</td><td>140</td></tr>
+<tr><td>6</td><td>马特乌斯</td><td>CM</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>7</td><td>马特乌斯</td><td>CM</td><td>马年传奇：马到成功</td><td>140</td></tr>
+<tr><td>8</td><td>路易斯菲戈</td><td>LW</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>9</td><td>埃托奥</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>10</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>11</td><td>维埃拉</td><td>CDM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>12</td><td>维埃拉</td><td>CDM</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>13</td><td>罗伯特·卡洛斯</td><td>LB</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>14</td><td>罗伯特·卡洛斯</td><td>LB</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>15</td><td>F. 迪马尔科</td><td>LWB</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>16</td><td>维埃拉</td><td>CDM</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>17</td><td>劳塔罗·马丁内斯</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>18</td><td>劳塔罗·马丁内斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>19</td><td>罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>20</td><td>劳塔罗·马丁内斯</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>21</td><td>恰尔汗奥卢</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>22</td><td>罗纳尔多</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>23</td><td>巴乔</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>24</td><td>弗兰</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>25</td><td>卡纳瓦罗</td><td>CB</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>26</td><td>伊万·萨莫拉诺</td><td>ST</td><td>26名宿(26HR)</td><td>137</td></tr>
+<tr><td>27</td><td>卡纳瓦罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>28</td><td>博格坎普</td><td>SS</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>29</td><td>M. 阿坎吉</td><td>CB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>30</td><td>博格坎普</td><td>SS</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>31</td><td>斯内德</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>32</td><td>巴蒂斯图塔</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>33</td><td>泽林斯基</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>34</td><td>M. 阿坎吉</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>35</td><td>贝隆</td><td>CAM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>36</td><td>哲科</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>37</td><td>布罗佐维奇</td><td>CDM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>38</td><td>贝隆</td><td>CAM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>39</td><td>阿莱克斯·桑切斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>40</td><td>皮尔洛</td><td>CM</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>41</td><td>L. 布兰科</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>42</td><td>N. 巴雷拉</td><td>CM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>43</td><td>胡安·夸德拉多</td><td>RWB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>44</td><td>夸雷斯马</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>45</td><td>维迪奇</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>46</td><td>夸雷斯马</td><td>LW</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>47</td><td>克雷斯波</td><td>ST</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>48</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>49</td><td>维迪奇</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>50</td><td>N. 巴雷拉</td><td>CM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>51</td><td>克雷斯波</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>52</td><td>卢西奥</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>53</td><td>哈维尔·萨内蒂</td><td>RWB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>54</td><td>麦孔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>55</td><td>胡安·赫苏斯</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>56</td><td>帕瓦尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>57</td><td>I. 科尔多巴</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>58</td><td>麦孔</td><td>RB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>59</td><td>麦孔</td><td>RB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>60</td><td>坎比亚索</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>61</td><td>哈维尔·萨内蒂</td><td>RWB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>62</td><td>什克里尼亚尔</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>63</td><td>德弗赖</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>64</td><td>佩里西奇</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>65</td><td>A. 巴斯托尼</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>66</td><td>D. 邓弗里斯</td><td>RB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>67</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>68</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>69</td><td>斯通斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>70</td><td>P. 苏契奇</td><td>CDM</td><td>世界群英(PTG)</td><td>128</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（16人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">贝隆</span>
+<span class="chip icon-chip">哈维尔·萨内蒂</span>
+<span class="chip icon-chip">克雷斯波</span>
+<span class="chip icon-chip">罗伯特·卡洛斯</span>
+<span class="chip icon-chip">巴蒂斯图塔</span>
+<span class="chip icon-chip">卡纳瓦罗</span>
+<span class="chip icon-chip">维埃拉</span>
+<span class="chip icon-chip">博格坎普</span>
+<span class="chip icon-chip">皮尔洛</span>
+<span class="chip icon-chip">马特乌斯</span>
+<span class="chip icon-chip">巴乔</span>
+<span class="chip icon-chip">罗纳尔多</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">埃托奥</span>
+<span class="chip icon-chip">路易斯菲戈</span>
+<span class="chip icon-chip">维迪奇</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-13" class="pack-section">
+<h3 class="pack-title">马德里竞技甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>马科斯·略伦特</td><td>RB</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>2</td><td>马科斯·略伦特</td><td>RB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>3</td><td>格里马尔多</td><td>LM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>4</td><td>库尔图瓦</td><td>GK</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>5</td><td>J. 阿尔瓦雷斯</td><td>SS</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>6</td><td>弗兰</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>7</td><td>库尔图瓦</td><td>GK</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>8</td><td>S. 穆里尼奥</td><td>RB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>格里马尔多</td><td>LM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>10</td><td>特奥·埃尔南德斯</td><td>LB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>11</td><td>库尔图瓦</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>12</td><td>菲利克斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>13</td><td>特奥·埃尔南德斯</td><td>LB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>14</td><td>J. 阿尔瓦雷斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>15</td><td>路易斯·苏亚雷斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>16</td><td>普维尔</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>17</td><td>卡拉斯科</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>18</td><td>孟菲斯·德佩</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>19</td><td>曼朱基奇</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>20</td><td>曼朱基奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>21</td><td>曼朱基奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>22</td><td>巴埃纳</td><td>LM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>23</td><td>卡拉斯科</td><td>LW</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>24</td><td>卡普德维拉</td><td>LB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>25</td><td>卡普德维拉</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>26</td><td>特里皮尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>27</td><td>马特乌斯·库尼亚</td><td>SS</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>28</td><td>加拉格尔</td><td>CM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>29</td><td>费尔南多·托雷斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>30</td><td>奥布拉克</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>31</td><td>C. 罗梅罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>32</td><td>罗德里</td><td>CDM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>33</td><td>C. 罗梅罗</td><td>CB</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>34</td><td>哈维·加兰</td><td>LB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>35</td><td>卡布雷拉</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>36</td><td>格列兹曼</td><td>SS</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>37</td><td>乌戈·桑切斯</td><td>ST</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>38</td><td>史蒂芬·萨维奇</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>39</td><td>A. 瑟洛特</td><td>ST</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>40</td><td>李刚仁</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>41</td><td>乔尼</td><td>LB</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>42</td><td>C. 朗格莱</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>43</td><td>A. 瑟洛特</td><td>ST</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>44</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>45</td><td>Y. 布努</td><td>GK</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>46</td><td>R. 德保罗</td><td>CM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>47</td><td>勒诺尔芒</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>48</td><td>N. 冈萨雷斯</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>49</td><td>莫利纳</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>50</td><td>T. 阿尔马达</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（3人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">乌戈·桑切斯</span>
+<span class="chip icon-chip">费尔南多·托雷斯</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-14" class="pack-section">
+<h3 class="pack-title">罗马甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>托蒂</td><td>SS</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>2</td><td>德罗西</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>3</td><td>托蒂</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>4</td><td>德罗西</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>5</td><td>德罗西</td><td>CDM</td><td>26名宿(26HR)</td><td>137</td></tr>
+<tr><td>6</td><td>托蒂</td><td>SS</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>7</td><td>E. 迪卡</td><td>CB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>8</td><td>A. 萨摩耶克</td><td>RWB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>9</td><td>沃勒</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>10</td><td>沃勒</td><td>ST</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>11</td><td>巴蒂斯图塔</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>12</td><td>M. 斯维拉尔</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>13</td><td>韦斯利</td><td>LWB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>14</td><td>卡福</td><td>RB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>15</td><td>A. 萨摩耶克</td><td>RWB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>16</td><td>E. 迪卡</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>17</td><td>迪巴拉</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>18</td><td>L. 佩莱格里尼</td><td>CAM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>19</td><td>哲科</td><td>ST</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>20</td><td>佩德罗</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>21</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>22</td><td>萨拉赫</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>23</td><td>亚伯拉罕</td><td>ST</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>24</td><td>萨拉赫</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>25</td><td>伊巴</td><td>CB</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>26</td><td>麦孔</td><td>RB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>27</td><td>阿利松</td><td>GK</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>28</td><td>阿什利·科尔</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>29</td><td>胡安·赫苏斯</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>30</td><td>阿什利·科尔</td><td>LB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>31</td><td>阿利松</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>32</td><td>麦孔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>33</td><td>麦孔</td><td>RB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>34</td><td>热尔维尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>35</td><td>中田英寿</td><td>CAM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>36</td><td>罗马尼奥利</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>37</td><td>马蒂奇</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>38</td><td>马尔基尼奥斯</td><td>CB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>39</td><td>M. 苏莱</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>40</td><td>K. 科内</td><td>CDM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>41</td><td>赞帕科斯塔</td><td>LWB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>42</td><td>K. 科内</td><td>CDM</td><td>铁血斗士(SPT)</td><td>130</td></tr>
+<tr><td>43</td><td>E. 绍穆罗多夫</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>44</td><td>D. 马伦</td><td>LW</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>45</td><td>Z. 切利克</td><td>RWB</td><td>连胜浪潮(WS)</td><td>128</td></tr>
+<tr><td>46</td><td>莫利纳</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>47</td><td>S. 阿布杜哈米德</td><td>RWB</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>48</td><td>A. 桑纳布里亚</td><td>ST</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>49</td><td>吕迪格</td><td>CB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>50</td><td>N. 艾纳乌伊</td><td>CM</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（4人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">巴蒂斯图塔</span>
+<span class="chip icon-chip">卡福</span>
+<span class="chip icon-chip">阿什利·科尔</span>
+<span class="chip icon-chip">托蒂</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-15" class="pack-section">
+<h3 class="pack-title">马赛甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>W. 萨利巴</td><td>CB</td><td>世界群英(PTG)</td><td>139</td></tr>
+<tr><td>2</td><td>德罗巴</td><td>ST</td><td>世界荣耀(WG)</td><td>139</td></tr>
+<tr><td>3</td><td>德罗巴</td><td>ST</td><td>马年传奇：一马当先</td><td>139</td></tr>
+<tr><td>4</td><td>德罗巴</td><td>ST</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>5</td><td>德罗巴</td><td>ST</td><td>马年传奇：马到成功</td><td>139</td></tr>
+<tr><td>6</td><td>德罗巴</td><td>ST</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>7</td><td>W. 萨利巴</td><td>CB</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>8</td><td>L. 苏亚雷斯</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>9</td><td>L. 苏亚雷斯</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>10</td><td>马克莱莱</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>11</td><td>拉比奥特</td><td>CM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>12</td><td>马克莱莱</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>13</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>14</td><td>马克莱莱</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>15</td><td>雅伊尔津霍</td><td>LW</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>16</td><td>马克莱莱</td><td>CDM</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>17</td><td>拉比奥特</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>18</td><td>托万</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>19</td><td>坎通纳</td><td>ST</td><td>马年传奇：一马当先</td><td>136</td></tr>
+<tr><td>20</td><td>沃勒</td><td>ST</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>21</td><td>德塞利</td><td>CB</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>22</td><td>坎通纳</td><td>ST</td><td>马年传奇：马到成功</td><td>136</td></tr>
+<tr><td>23</td><td>德塞利</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>24</td><td>沃勒</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>25</td><td>V. 隆基尔</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>26</td><td>莫伦特斯</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>27</td><td>里贝里</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>28</td><td>阿莱克斯·桑切斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>29</td><td>里贝里</td><td>LW</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>30</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>31</td><td>L. 布兰科</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>32</td><td>利扎拉祖</td><td>LB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>33</td><td>R. 皮雷斯</td><td>LM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>34</td><td>帕瓦尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>35</td><td>帕潘</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>36</td><td>乔丹·阿尤</td><td>SS</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>37</td><td>安古伊萨</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>38</td><td>弗朗西斯科利</td><td>SS</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>39</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>40</td><td>C. 姆贝巴</td><td>CB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>41</td><td>科拉西纳克</td><td>CB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>42</td><td>N. 阿盖德</td><td>CB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>43</td><td>巴坎布</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>44</td><td>A. 穆里略</td><td>RWB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>45</td><td>D. 卡莱塔卡</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>46</td><td>伊斯梅尔·萨尔</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>47</td><td>T. 维阿</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>48</td><td>I. 恩迪亚</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>49</td><td>I. 科内</td><td>CM</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>50</td><td>L. 巴莱蒂</td><td>CB</td><td>世界群英(PTG)</td><td>120</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（8人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">马克莱莱</span>
+<span class="chip icon-chip">R. 皮雷斯</span>
+<span class="chip icon-chip">里贝里</span>
+<span class="chip icon-chip">德塞利</span>
+<span class="chip icon-chip">坎通纳</span>
+<span class="chip icon-chip">雅伊尔津霍</span>
+<span class="chip icon-chip">德罗巴</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-16" class="pack-section">
+<h3 class="pack-title">热刺甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>哈里·凯恩</td><td>ST</td><td>连胜浪潮(WS)</td><td>141</td></tr>
+<tr><td>2</td><td>哈里·凯恩</td><td>ST</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>3</td><td>哈里·凯恩</td><td>ST</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>4</td><td>莫德里奇</td><td>CM</td><td>连胜浪潮(WS)</td><td>139</td></tr>
+<tr><td>5</td><td>莫德里奇</td><td>CM</td><td>26TOTS</td><td>139</td></tr>
+<tr><td>6</td><td>X. 西蒙斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>7</td><td>L. 武什科维奇</td><td>CB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>8</td><td>麦迪逊</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>9</td><td>孙兴慜</td><td>SS</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>10</td><td>孙兴慜</td><td>SS</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>11</td><td>G. 莱因克尔</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>12</td><td>麦迪逊</td><td>CAM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>13</td><td>孙兴慜</td><td>SS</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>14</td><td>贝尔</td><td>LW</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>15</td><td>尤里·贝尔奇奇</td><td>LB</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>16</td><td>贝尔</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>17</td><td>罗伯逊</td><td>LB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>18</td><td>罗伯逊</td><td>LB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>19</td><td>大卫·吉诺拉</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>20</td><td>蒂莫·维尔纳</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>21</td><td>坎贝尔</td><td>CB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>22</td><td>加拉格尔</td><td>CM</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>23</td><td>罗比·基恩</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>24</td><td>邓普西</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>25</td><td>特里皮尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>26</td><td>坎贝尔</td><td>CB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>27</td><td>C. 罗梅罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>28</td><td>C. 罗梅罗</td><td>CB</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>29</td><td>帕里尼亚</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>30</td><td>佩里西奇</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>31</td><td>卡里克</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>32</td><td>贝尔巴托夫</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>33</td><td>本坦库尔</td><td>CM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>34</td><td>S. 托纳利</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>35</td><td>本坦库尔</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>36</td><td>戴尔</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>37</td><td>S. 托纳利</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>38</td><td>凯尔·沃克</td><td>RB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>39</td><td>M. 库杜斯</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>40</td><td>C. 朗格莱</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>41</td><td>克劳奇</td><td>ST</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>42</td><td>Y. 比索玛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>130</td></tr>
+<tr><td>43</td><td>P. 萨尔</td><td>CM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>44</td><td>洛里斯</td><td>GK</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>45</td><td>范德芬</td><td>LB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>46</td><td>佩德罗·波罗</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>47</td><td>D. 桑切斯</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>48</td><td>K. 丹索</td><td>CB</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>49</td><td>N. 本塔莱布</td><td>CDM</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>50</td><td>L. 伯格瓦尔</td><td>CM</td><td>世界群英(PTG)</td><td>121</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（3人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">G. 莱因克尔</span>
+<span class="chip icon-chip">坎贝尔</span>
+<span class="chip icon-chip">贝尔</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-17" class="pack-section">
+<h3 class="pack-title">药厂甄选40人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>托尼·克罗斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>2</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：一马当先</td><td>138</td></tr>
+<tr><td>3</td><td>恰尔汗奥卢</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>4</td><td>托尼·克罗斯</td><td>CM</td><td>马年传奇：马到成功</td><td>138</td></tr>
+<tr><td>5</td><td>托尼·克罗斯</td><td>CM</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>6</td><td>扎卡</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>7</td><td>扎卡</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>8</td><td>格里马尔多</td><td>LM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>9</td><td>J. 塔</td><td>CB</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>10</td><td>格里马尔多</td><td>LM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>11</td><td>扎卡</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>12</td><td>J. 塔</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>13</td><td>孙兴慜</td><td>SS</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>14</td><td>沃勒</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>15</td><td>沃勒</td><td>ST</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>16</td><td>阿历克斯·加西亚</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>17</td><td>孙兴慜</td><td>SS</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>18</td><td>F. 维尔茨</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>19</td><td>F. 维尔茨</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>20</td><td>博尔哈伊戈勒希尔斯</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>21</td><td>卡瓦哈尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>22</td><td>卢西奥</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>23</td><td>卡瓦哈尔</td><td>RB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>24</td><td>哈弗茨</td><td>CAM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>25</td><td>泽·罗伯托</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>26</td><td>多诺万</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>27</td><td>J. 弗林蓬</td><td>RWB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>28</td><td>埃姆雷·詹</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>29</td><td>乔纳斯·霍夫曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>30</td><td>贝尔巴托夫</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>31</td><td>帕拉西奥斯</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>32</td><td>博尼费斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>33</td><td>车范根</td><td>ST</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>34</td><td>因卡皮耶</td><td>CB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>35</td><td>L. 赫拉德茨基</td><td>GK</td><td>连胜浪潮(WS)</td><td>129</td></tr>
+<tr><td>36</td><td>J. 斯坦尼希奇</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>37</td><td>A. 塞吉尔</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>38</td><td>O. 科苏努</td><td>CB</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>39</td><td>K. 阿拉伊贝戈维奇</td><td>LW</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>40</td><td>P. 彭特斯</td><td>GK</td><td>世界群英(PTG)</td><td>123</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（2人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">托尼·克罗斯</span>
+<span class="chip icon-chip">车范根</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-18" class="pack-section">
+<h3 class="pack-title">红白军团甄选50人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：50人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>姆巴佩</td><td>ST</td><td>世界群英(PTG)</td><td>141</td></tr>
+<tr><td>2</td><td>姆巴佩</td><td>ST</td><td>26TOTS</td><td>141</td></tr>
+<tr><td>3</td><td>法布雷加斯</td><td>CM</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>法布雷加斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>5</td><td>法布雷加斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>6</td><td>楚阿梅尼</td><td>CDM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>7</td><td>M. 萨尔</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>楚阿梅尼</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>L. 图拉姆</td><td>RB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>10</td><td>亨利</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>11</td><td>亨利</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>12</td><td>卡拉斯科</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>13</td><td>比埃尔霍夫</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>14</td><td>L. 卡马拉</td><td>CM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>15</td><td>M. 阿克利乌什</td><td>RM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>16</td><td>莫伦特斯</td><td>ST</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>17</td><td>卡拉斯科</td><td>LW</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>18</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>19</td><td>马克斯</td><td>CDM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>20</td><td>里卡多·卡瓦略</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>21</td><td>马克斯</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>22</td><td>里卡多·卡瓦略</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>23</td><td>佩蒂特</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>24</td><td>里卡多·卡瓦略</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>25</td><td>麦孔</td><td>RB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>26</td><td>麦孔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>27</td><td>麦孔</td><td>RB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>28</td><td>蒂莱曼斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>29</td><td>蒂莱曼斯</td><td>CM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>30</td><td>亚亚·图雷</td><td>CM</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>31</td><td>法比尼奥</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>32</td><td>戴尔</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>33</td><td>博纳多·席尔瓦</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>34</td><td>贝尔巴托夫</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>35</td><td>博纳多·席尔瓦</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>36</td><td>哈梅斯·罗德里格斯</td><td>CAM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>37</td><td>S. 阿丁拉</td><td>LW</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>38</td><td>M. 帕沙利奇</td><td>CM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>39</td><td>M. 帕沙利奇</td><td>CM</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>40</td><td>恩博洛</td><td>ST</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>41</td><td>L. 赫拉德茨基</td><td>GK</td><td>连胜浪潮(WS)</td><td>129</td></tr>
+<tr><td>42</td><td>W. 辛戈</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>43</td><td>M. 萨利苏</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>44</td><td>L. 福斯特</td><td>ST</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>45</td><td>K. 迪亚塔</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>46</td><td>南野拓实</td><td>CAM</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>47</td><td>K. 图拉姆</td><td>CM</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>48</td><td>A. 塞吉尔</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>49</td><td>I. 雅各布斯</td><td>LB</td><td>世界群英(PTG)</td><td>121</td></tr>
+<tr><td>50</td><td>扎卡利亚</td><td>CDM</td><td>世界群英(PTG)</td><td>115</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（5人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">比埃尔霍夫</span>
+<span class="chip icon-chip">佩蒂特</span>
+<span class="chip icon-chip">亚亚·图雷</span>
+<span class="chip icon-chip">L. 图拉姆</span>
+<span class="chip icon-chip">亨利</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-19" class="pack-section">
+<h3 class="pack-title">大黄蜂甄选40人球员包8-10强</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>哈兰德</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>哈兰德</td><td>ST</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>哈兰德</td><td>ST</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>4</td><td>N. 施洛特贝克</td><td>CB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>5</td><td>奥斯曼·登贝莱</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>6</td><td>N. 施洛特贝克</td><td>CB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>7</td><td>奥斯曼·登贝莱</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>8</td><td>J. 费尔曼</td><td>CM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>9</td><td>G. 科贝尔</td><td>GK</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>10</td><td>G. 科贝尔</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>11</td><td>M. 阿坎吉</td><td>CB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>12</td><td>J. 瑞尔森</td><td>RWB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>13</td><td>迈克尔梅里诺</td><td>CM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>14</td><td>迈克尔梅里诺</td><td>CM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>15</td><td>莱万多夫斯基</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>16</td><td>M. 阿坎吉</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>17</td><td>吉拉西</td><td>ST</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>18</td><td>J. 瑞尔森</td><td>RWB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>19</td><td>J. 贝林厄姆</td><td>CAM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>20</td><td>J. 贝林厄姆</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>21</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>22</td><td>J. 贝林厄姆</td><td>CAM</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>23</td><td>尤尔根·科勒尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>24</td><td>尤尔根·科勒尔</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>25</td><td>京多安</td><td>CM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>26</td><td>格策</td><td>CAM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>27</td><td>罗西基</td><td>CAM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>28</td><td>埃姆雷·詹</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>29</td><td>乔纳斯·霍夫曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>30</td><td>罗伊斯</td><td>CAM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>31</td><td>萨比策</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>32</td><td>G. 雷纳</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>33</td><td>D. 马伦</td><td>LW</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>34</td><td>R. 本森拜尼</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>35</td><td>穆尼耶</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>36</td><td>W. 安东</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>37</td><td>D. 斯文森</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>38</td><td>K. 阿德耶米</td><td>LW</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>39</td><td>L. 巴莱蒂</td><td>CB</td><td>世界群英(PTG)</td><td>120</td></tr>
+<tr><td>40</td><td>恩梅加</td><td>CM</td><td>世界群英(PTG)</td><td>120</td></tr>
+</tbody></table>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-20" class="pack-section">
+<h3 class="pack-title">铁锤帮甄选40人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>赖斯</td><td>CM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>2</td><td>赖斯</td><td>CM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>3</td><td>伊恩·赖特</td><td>ST</td><td>铁血斗士(SPT)</td><td>139</td></tr>
+<tr><td>4</td><td>里奥·费迪南德</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>5</td><td>里奥·费迪南德</td><td>CB</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>6</td><td>里奥·费迪南德</td><td>CB</td><td>马年传奇：一马当先</td><td>138</td></tr>
+<tr><td>7</td><td>D. 苏克</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>8</td><td>里奥·费迪南德</td><td>CB</td><td>马年传奇：马到成功</td><td>138</td></tr>
+<tr><td>9</td><td>D. 苏克</td><td>ST</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>10</td><td>马斯切拉诺</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>11</td><td>马斯切拉诺</td><td>CDM</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>12</td><td>马斯切拉诺</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>13</td><td>兰帕德</td><td>CM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>14</td><td>V. 曹法尔</td><td>RB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>15</td><td>兰帕德</td><td>CM</td><td>马年传奇：一马当先</td><td>136</td></tr>
+<tr><td>16</td><td>兰帕德</td><td>CM</td><td>马年传奇：马到成功</td><td>136</td></tr>
+<tr><td>17</td><td>兰帕德</td><td>CM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>18</td><td>帕布罗·福纳尔斯</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>19</td><td>B. 摩尔</td><td>CB</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>20</td><td>V. 曹法尔</td><td>RB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>21</td><td>N. 弗拉什奇</td><td>CM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>22</td><td>沃德-普劳斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>23</td><td>罗比·基恩</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>24</td><td>特维斯</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>25</td><td>特维斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>26</td><td>阿瑙托维奇</td><td>ST</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>27</td><td>永贝里</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>28</td><td>卡里克</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>29</td><td>永贝里</td><td>LW</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>30</td><td>M. 库杜斯</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>31</td><td>乔·科尔</td><td>RM</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>32</td><td>乔·科尔</td><td>RM</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>33</td><td>乔·科尔</td><td>RM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>34</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>35</td><td>绍切克</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>36</td><td>E. 阿尔瓦雷斯</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>37</td><td>N. 阿盖德</td><td>CB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>38</td><td>万比萨卡</td><td>RB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>39</td><td>马苏亚库</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>40</td><td>E. 迪乌夫</td><td>LB</td><td>世界群英(PTG)</td><td>125</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（7人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">伊恩·赖特</span>
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">B. 摩尔</span>
+<span class="chip icon-chip">D. 苏克</span>
+<span class="chip icon-chip">兰帕德</span>
+<span class="chip icon-chip">永贝里</span>
+<span class="chip icon-chip">里奥·费迪南德</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-21" class="pack-section">
+<h3 class="pack-title">本菲卡甄选40人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>尤西比奥</td><td>SS</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>2</td><td>尤西比奥</td><td>SS</td><td>马年传奇：一马当先</td><td>140</td></tr>
+<tr><td>3</td><td>尤西比奥</td><td>SS</td><td>马年传奇：马到成功</td><td>140</td></tr>
+<tr><td>4</td><td>菲利克斯</td><td>SS</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>5</td><td>格里马尔多</td><td>LM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>6</td><td>恩佐-费尔南德斯</td><td>CM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>7</td><td>格里马尔多</td><td>LM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>菲利克斯</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>恩佐-费尔南德斯</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>10</td><td>M. 斯维拉尔</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>11</td><td>V. 帕夫利季斯</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>鲁本·迪亚斯</td><td>CB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>13</td><td>艾马尔</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>14</td><td>鲁本·迪亚斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>15</td><td>艾马尔</td><td>CAM</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>16</td><td>F. 奥尔斯内斯</td><td>CM</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>17</td><td>卡普德维拉</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>18</td><td>冈萨洛·格德斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>19</td><td>埃德森</td><td>GK</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>20</td><td>卡普德维拉</td><td>LB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>21</td><td>奥布拉克</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>22</td><td>埃德森</td><td>GK</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>23</td><td>博纳多·席尔瓦</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>24</td><td>马蒂奇</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>25</td><td>博纳多·席尔瓦</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>26</td><td>奥塔门迪</td><td>CB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>27</td><td>保罗富特雷</td><td>LW</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>28</td><td>C. 朗格莱</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>29</td><td>若奥·坎塞洛</td><td>RB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>30</td><td>若奥·坎塞洛</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>31</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>32</td><td>拉米雷斯</td><td>CDM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>33</td><td>D. 努涅斯</td><td>ST</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>34</td><td>若昂·内维斯</td><td>CM</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>35</td><td>F. 伊万诺维奇</td><td>ST</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>36</td><td>纳尔逊·塞梅多</td><td>RB</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>37</td><td>R. 里奥斯</td><td>CDM</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>38</td><td>冈萨洛·拉莫斯</td><td>ST</td><td>世界群英(PTG)</td><td>123</td></tr>
+<tr><td>39</td><td>J. 杜兰</td><td>ST</td><td>世界群英(PTG)</td><td>123</td></tr>
+<tr><td>40</td><td>鲁伊·科斯塔</td><td>CAM</td><td>世界荣耀(WG)</td><td>121</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（3人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">鲁伊·科斯塔</span>
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">尤西比奥</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-22" class="pack-section">
+<h3 class="pack-title">那不勒斯甄选40人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>马拉多纳</td><td>SS</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>马拉多纳</td><td>SS</td><td>马年传奇：一马当先</td><td>140</td></tr>
+<tr><td>3</td><td>马拉多纳</td><td>SS</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>马拉多纳</td><td>SS</td><td>马年传奇：马到成功</td><td>140</td></tr>
+<tr><td>5</td><td>克瓦拉茨赫利亚</td><td>LW</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>6</td><td>克瓦拉茨赫利亚</td><td>LW</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>7</td><td>麦克托米奈</td><td>CM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>8</td><td>麦克托米奈</td><td>CM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>卡纳瓦罗</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>10</td><td>卡纳瓦罗</td><td>CB</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>11</td><td>泽林斯基</td><td>CM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>12</td><td>德布劳内</td><td>CAM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>13</td><td>德布劳内</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>14</td><td>泽林斯基</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>15</td><td>佐拉</td><td>SS</td><td>马年传奇：一马当先</td><td>135</td></tr>
+<tr><td>16</td><td>佐拉</td><td>SS</td><td>马年传奇：马到成功</td><td>135</td></tr>
+<tr><td>17</td><td>霍伊伦</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>18</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>19</td><td>金玟哉</td><td>CB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>20</td><td>卢卡库</td><td>ST</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>21</td><td>L. 布兰科</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>22</td><td>奥斯梅恩</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>23</td><td>金玟哉</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>24</td><td>哈姆西克</td><td>CAM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>25</td><td>胡安·赫苏斯</td><td>CB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>26</td><td>G. 迪洛伦佐</td><td>RB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>27</td><td>G. 迪洛伦佐</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>28</td><td>阿尔比奥尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>29</td><td>安古伊萨</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>30</td><td>洛博特卡</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>31</td><td>A. 拉赫马尼</td><td>CB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>32</td><td>M. 奥利韦拉</td><td>LB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>33</td><td>E. 埃尔马斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>34</td><td>M. 奥利韦拉</td><td>LB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>35</td><td>M. 奥利韦拉</td><td>LB</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>36</td><td>亚历克斯·梅雷特</td><td>GK</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>37</td><td>A. 图安则贝</td><td>CB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>38</td><td>法比安-鲁易斯</td><td>CM</td><td>世界群英(PTG)</td><td>122</td></tr>
+<tr><td>39</td><td>B. 吉尔莫尔</td><td>CM</td><td>世界群英(PTG)</td><td>122</td></tr>
+<tr><td>40</td><td>L. 厄斯提高德</td><td>CB</td><td>世界群英(PTG)</td><td>119</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（3人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">佐拉</span>
+<span class="chip icon-chip">马拉多纳</span>
+<span class="chip icon-chip">卡纳瓦罗</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-23" class="pack-section">
+<h3 class="pack-title">阿尔坎塔拉血脉甄选40人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：40人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>路易斯菲戈</td><td>LW</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>路易斯菲戈</td><td>LW</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>4</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>5</td><td>路易斯菲戈</td><td>LW</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>6</td><td>布鲁诺·费尔南德斯</td><td>CAM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>7</td><td>L. 苏亚雷斯</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>8</td><td>努诺·门德斯</td><td>LB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>9</td><td>C. 罗纳尔多</td><td>ST</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>10</td><td>L. 苏亚雷斯</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>11</td><td>努诺·门德斯</td><td>LB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>12</td><td>C. 罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>13</td><td>C. 罗纳尔多</td><td>ST</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>14</td><td>拉菲尼亚</td><td>LW</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>15</td><td>拉菲尼亚</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>16</td><td>特林康</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>17</td><td>R. 扎拉扎尔</td><td>CAM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>18</td><td>M. 阿劳霍</td><td>LB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>19</td><td>夸雷斯马</td><td>LW</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>20</td><td>夸雷斯马</td><td>LW</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>21</td><td>拉斐尔·莱奥</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>22</td><td>夸雷斯马</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>23</td><td>拉斐尔·莱奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>24</td><td>M. 阿劳霍</td><td>LB</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>25</td><td>里杰卡尔德</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>26</td><td>彼得·舒梅切尔</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>27</td><td>戴尔</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>28</td><td>帕里尼亚</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>29</td><td>保罗富特雷</td><td>LW</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>30</td><td>贝莱林</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>31</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>32</td><td>M. 乌加特</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>33</td><td>R. 拉比亚</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>34</td><td>佩德罗·波罗</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>35</td><td>M. 德米拉尔</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>36</td><td>Z. 德巴斯特</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>37</td><td>哲凯赖什</td><td>ST</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>38</td><td>雷纳托·维加</td><td>CB</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>39</td><td>约瓦内爱·布拉尔</td><td>LW</td><td>世界群英(PTG)</td><td>123</td></tr>
+<tr><td>40</td><td>A. 法塔武</td><td>LW</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（4人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">彼得·舒梅切尔</span>
+<span class="chip icon-chip">路易斯菲戈</span>
+<span class="chip icon-chip">里杰卡尔德</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-24" class="pack-section">
+<h3 class="pack-title">阿贾克斯甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>伊布拉希莫维奇</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>2</td><td>伊布拉希莫维奇</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>3</td><td>罗纳德·科曼</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>4</td><td>克鲁伊夫</td><td>SS</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>5</td><td>罗纳德·科曼</td><td>CB</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>6</td><td>J. 廷贝尔</td><td>RB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>7</td><td>M. 戈茨</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>J. 廷贝尔</td><td>RB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>博格坎普</td><td>SS</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>10</td><td>斯内德</td><td>CAM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>11</td><td>博格坎普</td><td>SS</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>12</td><td>斯内德</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>13</td><td>路易斯·苏亚雷斯</td><td>ST</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>14</td><td>斯塔姆</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>15</td><td>范德萨</td><td>GK</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>16</td><td>范德萨</td><td>GK</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>17</td><td>斯塔姆</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>18</td><td>M. 劳德鲁普</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>19</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>20</td><td>里杰卡尔德</td><td>CM</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>21</td><td>F. 德容</td><td>CM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>22</td><td>洛博特卡</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>23</td><td>赫拉芬贝赫</td><td>CDM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>24</td><td>M. 库杜斯</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>25</td><td>E. 阿尔瓦雷斯</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>26</td><td>塔利亚菲科</td><td>LB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>27</td><td>板仓滉</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>28</td><td>D. 桑切斯</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>29</td><td>N. 马兹拉维</td><td>LB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>30</td><td>J. 桑切斯</td><td>RB</td><td>世界群英(PTG)</td><td>124</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（10人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">M. 劳德鲁普</span>
+<span class="chip icon-chip">克鲁伊维特</span>
+<span class="chip icon-chip">罗纳德·科曼</span>
+<span class="chip icon-chip">J. 利特马宁</span>
+<span class="chip icon-chip">博格坎普</span>
+<span class="chip icon-chip">里杰卡尔德</span>
+<span class="chip icon-chip">伊布拉希莫维奇</span>
+<span class="chip icon-chip">范德萨</span>
+<span class="chip icon-chip">范巴斯滕</span>
+<span class="chip icon-chip">克鲁伊夫</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-25" class="pack-section">
+<h3 class="pack-title">埃因霍温甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>罗纳德·科曼</td><td>CB</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>2</td><td>罗纳尔多</td><td>ST</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>3</td><td>罗纳德·科曼</td><td>CB</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>4</td><td>X. 西蒙斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>5</td><td>罗纳尔多</td><td>ST</td><td>世界荣耀(WG)</td><td>138</td></tr>
+<tr><td>6</td><td>J. 费尔曼</td><td>CM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>7</td><td>莫罗·儒尼奥尔</td><td>LB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>I. 赛巴里</td><td>CAM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>孟菲斯·德佩</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>10</td><td>J. 斯考腾</td><td>CB</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>11</td><td>K. 佐野</td><td>CM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>斯塔姆</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>13</td><td>斯塔姆</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>14</td><td>朴智星</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>15</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>16</td><td>格策</td><td>CAM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>17</td><td>古利特</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>18</td><td>朴智星</td><td>LW</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>19</td><td>加克波</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>20</td><td>佩里西奇</td><td>LW</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>21</td><td>D. 邓弗里斯</td><td>RB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>22</td><td>比斯利</td><td>LM</td><td>世界荣耀(WG)</td><td>130</td></tr>
+<tr><td>23</td><td>I. 桑加雷</td><td>CDM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>24</td><td>D. 马伦</td><td>LW</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>25</td><td>里卡多·罗德里格斯</td><td>LB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>26</td><td>M. 蒂尔曼</td><td>CAM</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>27</td><td>M. 科瓦</td><td>GK</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>E. 巴伊拉克塔雷维奇</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>29</td><td>范尼斯特鲁伊</td><td>ST</td><td>世界荣耀(WG)</td><td>124</td></tr>
+<tr><td>30</td><td>布雷内特</td><td>RB</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（6人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">罗纳德·科曼</span>
+<span class="chip icon-chip">克鲁伊维特</span>
+<span class="chip icon-chip">范尼斯特鲁伊</span>
+<span class="chip icon-chip">古利特</span>
+<span class="chip icon-chip">罗纳尔多</span>
+<span class="chip icon-chip">朴智星</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-26" class="pack-section">
+<h3 class="pack-title">黄色潜水艇甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>帕雷霍</td><td>CM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>2</td><td>帕雷霍</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>3</td><td>弗兰</td><td>SS</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>4</td><td>S. 穆里尼奥</td><td>RB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>5</td><td>卡洛斯·罗梅罗</td><td>LB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>6</td><td>帕布罗·福纳尔斯</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>7</td><td>阿历克斯·加西亚</td><td>CM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>8</td><td>巴埃纳</td><td>LM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>9</td><td>萨勒姆·达瓦萨里</td><td>LW</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>10</td><td>巴埃纳</td><td>LM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>11</td><td>博尔哈伊戈勒希尔斯</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>莫莱罗</td><td>LW</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>13</td><td>里克尔梅</td><td>CAM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>14</td><td>罗德里</td><td>CDM</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>15</td><td>卡普德维拉</td><td>LB</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>16</td><td>R. 皮雷斯</td><td>LM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>17</td><td>卡普德维拉</td><td>LB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>18</td><td>罗德里</td><td>CDM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>19</td><td>冈萨洛·格德斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>20</td><td>阿尔比奥尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>21</td><td>安古伊萨</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>22</td><td>久保健英</td><td>CAM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>23</td><td>科克兰</td><td>CDM</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>24</td><td>A. 瑟洛特</td><td>ST</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>25</td><td>P. 埃斯图皮南</td><td>LWB</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>26</td><td>巴坎布</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>27</td><td>T. 布坎南</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>28</td><td>T. 奥卢瓦西伊</td><td>ST</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>29</td><td>雷纳托·维加</td><td>CB</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>30</td><td>A. 弗里曼</td><td>RB</td><td>世界群英(PTG)</td><td>124</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（2人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">里克尔梅</span>
+<span class="chip icon-chip">R. 皮雷斯</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-27" class="pack-section">
+<h3 class="pack-title">红牛军团甄选30人球员包8-10强</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>D. 劳恩</td><td>LB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>2</td><td>基米希</td><td>CDM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>3</td><td>基米希</td><td>CDM</td><td>连胜浪潮(WS)</td><td>138</td></tr>
+<tr><td>4</td><td>X. 西蒙斯</td><td>LW</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>5</td><td>D. 劳恩</td><td>LB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>6</td><td>D. 索博斯洛伊</td><td>CAM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>7</td><td>基米希</td><td>CDM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>8</td><td>于帕梅卡诺</td><td>CB</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>9</td><td>于帕梅卡诺</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>10</td><td>E. 福斯贝里</td><td>LW</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>11</td><td>M. 西玛坎</td><td>CB</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>C. 鲍姆加特纳</td><td>CAM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>13</td><td>蒂莫·维尔纳</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>14</td><td>马特乌斯·库尼亚</td><td>SS</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>15</td><td>马特乌斯·库尼亚</td><td>SS</td><td>世界群英(PTG)</td><td>133</td></tr>
+<tr><td>16</td><td>萨比策</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>17</td><td>Y. 鲍尔森</td><td>ST</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>18</td><td>A. 瑟洛特</td><td>ST</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>19</td><td>A. 努萨</td><td>LW</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>20</td><td>E. 埃尔马斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>21</td><td>A. 瑟洛特</td><td>ST</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>22</td><td>贝纳多</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>23</td><td>N. 赛沃尔德</td><td>CDM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>24</td><td>J. 格瓦迪奥尔</td><td>LB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>25</td><td>莱默尔</td><td>RB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>26</td><td>T. 亚当斯</td><td>CDM</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>27</td><td>科纳特</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>黄熙灿</td><td>LW</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>29</td><td>R. 巴库</td><td>RB</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>30</td><td>Y. 迪奥曼德</td><td>LW</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-28" class="pack-section">
+<h3 class="pack-title">里尔甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>加布里埃尔</td><td>CB</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>2</td><td>加布里埃尔</td><td>CB</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>3</td><td>托万</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>4</td><td>M. 迈尼昂</td><td>GK</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>5</td><td>阿扎尔</td><td>CAM</td><td>连胜浪潮(WS)</td><td>136</td></tr>
+<tr><td>6</td><td>吉拉西</td><td>ST</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>7</td><td>阿扎尔</td><td>CAM</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>8</td><td>盖耶</td><td>CDM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>9</td><td>H. 科菲</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>10</td><td>M. 迈尼昂</td><td>GK</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>11</td><td>本杰明·安德烈</td><td>CDM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>奥巴梅扬</td><td>ST</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>13</td><td>拉斐尔·莱奥</td><td>LW</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>14</td><td>奥斯梅恩</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>15</td><td>拉斐尔·莱奥</td><td>LW</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>16</td><td>帕瓦尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>17</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>18</td><td>热尔维尼奥</td><td>LW</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>19</td><td>吉鲁</td><td>ST</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>20</td><td>乔·科尔</td><td>RM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>21</td><td>乔·科尔</td><td>RM</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>22</td><td>乔·科尔</td><td>RM</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>23</td><td>Y. 比索玛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>130</td></tr>
+<tr><td>24</td><td>C. 姆贝巴</td><td>CB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>25</td><td>Z. 切利克</td><td>RWB</td><td>连胜浪潮(WS)</td><td>128</td></tr>
+<tr><td>26</td><td>T. 维阿</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>27</td><td>穆尼耶</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>28</td><td>G. 古德蒙德松</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>29</td><td>迪涅</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>30</td><td>A. 奥纳纳</td><td>CDM</td><td>世界群英(PTG)</td><td>126</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（1人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">克鲁伊维特</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-29" class="pack-section">
+<h3 class="pack-title">维拉人甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>盖耶</td><td>CDM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>2</td><td>盖耶</td><td>CDM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>3</td><td>J. 贝德纳雷克</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>4</td><td>亚伯拉罕</td><td>ST</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>5</td><td>大卫·吉诺拉</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>6</td><td>R. 皮雷斯</td><td>LM</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>7</td><td>罗比·基恩</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>8</td><td>理查兹</td><td>RB</td><td>26名宿(26HR)</td><td>133</td></tr>
+<tr><td>9</td><td>彼得·舒梅切尔</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>10</td><td>乔丹·阿尤</td><td>SS</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>11</td><td>蒂莱曼斯</td><td>CM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>12</td><td>蒂莱曼斯</td><td>CM</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>13</td><td>凯尔·沃克</td><td>RB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>14</td><td>C. 朗格莱</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>15</td><td>乔·科尔</td><td>RM</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>16</td><td>乔·科尔</td><td>RM</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>17</td><td>乔·科尔</td><td>RM</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>18</td><td>孔萨</td><td>CB</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>19</td><td>克劳奇</td><td>ST</td><td>世界荣耀(WG)</td><td>131</td></tr>
+<tr><td>20</td><td>M. 罗杰斯</td><td>CAM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>21</td><td>尼兰德</td><td>GK</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>22</td><td>D. 马伦</td><td>LW</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>23</td><td>麦金</td><td>RM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>24</td><td>拉什福德</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>25</td><td>Z. 铃木</td><td>GK</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>26</td><td>E. 马丁内斯</td><td>GK</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>27</td><td>迪涅</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>M. 鲁古</td><td>LWB</td><td>连胜浪潮(WS)</td><td>127</td></tr>
+<tr><td>29</td><td>A. 奥纳纳</td><td>CDM</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>30</td><td>V. 约翰森</td><td>GK</td><td>世界群英(PTG)</td><td>122</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（2人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">R. 皮雷斯</span>
+<span class="chip icon-chip">彼得·舒梅切尔</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-30" class="pack-section">
+<h3 class="pack-title">埃弗顿甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>埃托奥</td><td>ST</td><td>世界荣耀(WG)</td><td>140</td></tr>
+<tr><td>2</td><td>埃托奥</td><td>ST</td><td>连胜浪潮(WS)</td><td>140</td></tr>
+<tr><td>3</td><td>埃托奥</td><td>ST</td><td>铁血斗士(SPT)</td><td>140</td></tr>
+<tr><td>4</td><td>A. 戈登</td><td>LW</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>5</td><td>A. 戈登</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>6</td><td>G. 莱因克尔</td><td>ST</td><td>世界荣耀(WG)</td><td>136</td></tr>
+<tr><td>7</td><td>盖耶</td><td>CDM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>8</td><td>鲁尼</td><td>SS</td><td>连胜浪潮(WS)</td><td>135</td></tr>
+<tr><td>9</td><td>鲁尼</td><td>SS</td><td>世界荣耀(WG)</td><td>135</td></tr>
+<tr><td>10</td><td>鲁尼</td><td>SS</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>11</td><td>N. 弗拉什奇</td><td>CM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>12</td><td>J. 塔尔科夫斯基</td><td>CB</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>13</td><td>大卫·吉诺拉</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>14</td><td>卢卡库</td><td>ST</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>15</td><td>霍华德</td><td>GK</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>16</td><td>霍华德</td><td>GK</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>17</td><td>多诺万</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>18</td><td>卡希尔</td><td>SS</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>19</td><td>卡希尔</td><td>SS</td><td>铁血斗士(SPT)</td><td>133</td></tr>
+<tr><td>20</td><td>科尔曼</td><td>RB</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>21</td><td>费莱尼</td><td>CM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>22</td><td>费莱尼</td><td>CM</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>23</td><td>哈梅斯·罗德里格斯</td><td>CAM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>24</td><td>斯通斯</td><td>CB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>25</td><td>杜库雷</td><td>CM</td><td>铁血斗士(SPT)</td><td>130</td></tr>
+<tr><td>26</td><td>乔丹·皮克福德</td><td>GK</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>27</td><td>迪涅</td><td>LB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>I. 恩迪亚</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>29</td><td>A. 奥纳纳</td><td>CDM</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>30</td><td>Y. 米纳</td><td>CB</td><td>世界群英(PTG)</td><td>123</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（3人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">G. 莱因克尔</span>
+<span class="chip icon-chip">鲁尼</span>
+<span class="chip icon-chip">埃托奥</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-31" class="pack-section">
+<h3 class="pack-title">喜鹊军团甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>2</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>3</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>4</td><td>法比安·舍尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>5</td><td>A. 戈登</td><td>LW</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>6</td><td>托万</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>7</td><td>迈克尔梅里诺</td><td>CM</td><td>铁血斗士(SPT)</td><td>136</td></tr>
+<tr><td>8</td><td>迈克尔梅里诺</td><td>CM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>9</td><td>I. 托内</td><td>ST</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>10</td><td>乔林顿</td><td>CM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>11</td><td>大卫·吉诺拉</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>12</td><td>阿兰·希勒</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>13</td><td>特里皮尔</td><td>RB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>14</td><td>坎贝尔</td><td>CB</td><td>连胜浪潮(WS)</td><td>133</td></tr>
+<tr><td>15</td><td>克鲁伊维特</td><td>ST</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>16</td><td>坎贝尔</td><td>CB</td><td>世界荣耀(WG)</td><td>133</td></tr>
+<tr><td>17</td><td>哈维·巴恩斯</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>18</td><td>S. 托纳利</td><td>CDM</td><td>铁血斗士(SPT)</td><td>132</td></tr>
+<tr><td>19</td><td>约翰·巴恩斯</td><td>LW</td><td>世界荣耀(WG)</td><td>132</td></tr>
+<tr><td>20</td><td>S. 托纳利</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>21</td><td>N. 沃尔特马德</td><td>ST</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>22</td><td>C. 姆贝巴</td><td>CB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>23</td><td>丹·伯恩</td><td>CB</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>24</td><td>E. 安德森</td><td>CM</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>25</td><td>克里斯·伍德</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>26</td><td>Y. 维萨</td><td>LW</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>27</td><td>阿尔米隆</td><td>LW</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>28</td><td>格兰特·汉利</td><td>CB</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>29</td><td>N. 本塔莱布</td><td>CDM</td><td>世界群英(PTG)</td><td>124</td></tr>
+<tr><td>30</td><td>欧文</td><td>ST</td><td>世界荣耀(WG)</td><td>123</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（6人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">约翰·巴恩斯</span>
+<span class="chip icon-chip">阿兰·希勒</span>
+<span class="chip icon-chip">克鲁伊维特</span>
+<span class="chip icon-chip">伊恩·拉什</span>
+<span class="chip icon-chip">坎贝尔</span>
+<span class="chip icon-chip">欧文</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-32" class="pack-section">
+<h3 class="pack-title">波尔图甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>路易斯·迪亚斯</td><td>LW</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>2</td><td>维蒂尼亚</td><td>CM</td><td>世界群英(PTG)</td><td>140</td></tr>
+<tr><td>3</td><td>路易斯·迪亚斯</td><td>LW</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>4</td><td>维蒂尼亚</td><td>CM</td><td>26TOTS</td><td>140</td></tr>
+<tr><td>5</td><td>卡塞米罗</td><td>CDM</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>6</td><td>卡塞米罗</td><td>CDM</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>7</td><td>卡西利亚斯</td><td>GK</td><td>世界荣耀(WG)</td><td>137</td></tr>
+<tr><td>8</td><td>M. 萨尔</td><td>CB</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>卡塞米罗</td><td>CDM</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>10</td><td>卡塞米罗</td><td>CDM</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>11</td><td>鲁本·内维斯</td><td>CDM</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>12</td><td>J. 贝德纳雷克</td><td>CB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>13</td><td>鲁本·内维斯</td><td>CDM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>14</td><td>J. 基维奥尔</td><td>CB</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>15</td><td>里卡多·卡瓦略</td><td>CB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>16</td><td>里卡多·卡瓦略</td><td>CB</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>17</td><td>里卡多·卡瓦略</td><td>CB</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>18</td><td>夸雷斯马</td><td>LW</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>19</td><td>夸雷斯马</td><td>LW</td><td>26名宿(26HR)</td><td>134</td></tr>
+<tr><td>20</td><td>V. 弗罗霍尔特</td><td>CM</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>21</td><td>M. 塔雷米</td><td>ST</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>22</td><td>奥塔门迪</td><td>CB</td><td>世界群英(PTG)</td><td>132</td></tr>
+<tr><td>23</td><td>哈梅斯·罗德里格斯</td><td>CAM</td><td>世界群英(PTG)</td><td>131</td></tr>
+<tr><td>24</td><td>保罗富特雷</td><td>LW</td><td>铁血斗士(SPT)</td><td>131</td></tr>
+<tr><td>25</td><td>S. 弗法纳</td><td>CM</td><td>世界群英(PTG)</td><td>130</td></tr>
+<tr><td>26</td><td>黄仁范</td><td>CM</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>27</td><td>迪奥戈·科斯塔</td><td>GK</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>J. 咖耶姆贝</td><td>LB</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>29</td><td>斯蒂芬·埃乌斯塔齐奥</td><td>CM</td><td>世界群英(PTG)</td><td>125</td></tr>
+<tr><td>30</td><td>J. 桑切斯</td><td>RB</td><td>世界群英(PTG)</td><td>124</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（2人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">保罗富特雷</span>
+<span class="chip icon-chip">卡西利亚斯</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-33" class="pack-section">
+<h3 class="pack-title">霍芬海姆甄选30人球员包8-10强</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>D. 劳恩</td><td>LB</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>2</td><td>D. 劳恩</td><td>LB</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>3</td><td>G. 科贝尔</td><td>GK</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>4</td><td>格纳布里</td><td>SS</td><td>世界群英(PTG)</td><td>137</td></tr>
+<tr><td>5</td><td>格纳布里</td><td>SS</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>6</td><td>法比安·舍尔</td><td>CB</td><td>铁血斗士(SPT)</td><td>137</td></tr>
+<tr><td>7</td><td>G. 科贝尔</td><td>GK</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>格纳布里</td><td>SS</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>9</td><td>V. 曹法尔</td><td>RB</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>10</td><td>V. 曹法尔</td><td>RB</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>11</td><td>A·施蒂勒</td><td>CDM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>12</td><td>克拉马里奇</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>13</td><td>C. 鲍姆加特纳</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>14</td><td>乔林顿</td><td>CM</td><td>铁血斗士(SPT)</td><td>135</td></tr>
+<tr><td>15</td><td>克拉马里奇</td><td>CAM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>16</td><td>C. 鲍姆加特纳</td><td>CAM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>17</td><td>阿拉巴</td><td>LB</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>18</td><td>奥利佛·鲍曼</td><td>GK</td><td>世界群英(PTG)</td><td>134</td></tr>
+<tr><td>19</td><td>阿拉巴</td><td>LB</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>20</td><td>奥利佛·鲍曼</td><td>GK</td><td>26TOTS</td><td>134</td></tr>
+<tr><td>21</td><td>乔纳斯·霍夫曼</td><td>LW</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>22</td><td>贝纳多</td><td>RB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>23</td><td>M. 格雷戈里施</td><td>ST</td><td>世界群英(PTG)</td><td>129</td></tr>
+<tr><td>24</td><td>S. 珀斯切</td><td>RB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>25</td><td>C. 理查兹</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>26</td><td>町田</td><td>CB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>27</td><td>R. 赫拉纳克</td><td>CB</td><td>世界群英(PTG)</td><td>122</td></tr>
+<tr><td>28</td><td>布雷内特</td><td>RB</td><td>世界群英(PTG)</td><td>122</td></tr>
+<tr><td>29</td><td>P. 维默</td><td>RM</td><td>世界群英(PTG)</td><td>122</td></tr>
+<tr><td>30</td><td>L. 厄斯提高德</td><td>CB</td><td>世界群英(PTG)</td><td>119</td></tr>
+</tbody></table>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<section id="pack-34" class="pack-section">
+<h3 class="pack-title">里昂甄选30人球员包8-10强（含传奇时刻1强球员）</h3>
+<div class="player-count">非ICON球员：30人</div>
+<table class="player-table"><thead><tr><th>#</th><th>球员名</th><th>位置</th><th>赛季</th><th>8强OVR</th></tr></thead><tbody>
+<tr><td>1</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>世界群英(PTG)</td><td>138</td></tr>
+<tr><td>2</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>铁血斗士(SPT)</td><td>138</td></tr>
+<tr><td>3</td><td>布鲁诺·吉马良斯</td><td>CM</td><td>26TOTS</td><td>138</td></tr>
+<tr><td>4</td><td>本泽马</td><td>ST</td><td>马年传奇：一马当先</td><td>137</td></tr>
+<tr><td>5</td><td>本泽马</td><td>ST</td><td>连胜浪潮(WS)</td><td>137</td></tr>
+<tr><td>6</td><td>本泽马</td><td>ST</td><td>马年传奇：马到成功</td><td>137</td></tr>
+<tr><td>7</td><td>谢尔基</td><td>LW</td><td>26TOTS</td><td>137</td></tr>
+<tr><td>8</td><td>B. 巴科拉</td><td>LW</td><td>世界群英(PTG)</td><td>136</td></tr>
+<tr><td>9</td><td>托利索</td><td>CAM</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>10</td><td>B. 巴科拉</td><td>LW</td><td>26TOTS</td><td>136</td></tr>
+<tr><td>11</td><td>M. 尼阿克哈特</td><td>CB</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>12</td><td>P. 苏尔克</td><td>CAM</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>13</td><td>孟菲斯·德佩</td><td>ST</td><td>世界群英(PTG)</td><td>135</td></tr>
+<tr><td>14</td><td>P. 苏尔克</td><td>CAM</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>15</td><td>M. 尼阿克哈特</td><td>CB</td><td>26TOTS</td><td>135</td></tr>
+<tr><td>16</td><td>埃辛</td><td>CDM</td><td>连胜浪潮(WS)</td><td>134</td></tr>
+<tr><td>17</td><td>埃辛</td><td>CDM</td><td>世界荣耀(WG)</td><td>134</td></tr>
+<tr><td>18</td><td>埃辛</td><td>CDM</td><td>铁血斗士(SPT)</td><td>134</td></tr>
+<tr><td>19</td><td>马蒂奇</td><td>CDM</td><td>连胜浪潮(WS)</td><td>132</td></tr>
+<tr><td>20</td><td>费兰·门迪</td><td>LB</td><td>连胜浪潮(WS)</td><td>131</td></tr>
+<tr><td>21</td><td>洛里斯</td><td>GK</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>22</td><td>P. 卡鲁路</td><td>CB</td><td>连胜浪潮(WS)</td><td>130</td></tr>
+<tr><td>23</td><td>D. 卡莱塔卡</td><td>CB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>24</td><td>塔利亚菲科</td><td>LB</td><td>世界群英(PTG)</td><td>128</td></tr>
+<tr><td>25</td><td>M. 古斯图</td><td>RB</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>26</td><td>吉安·马特塔</td><td>ST</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>27</td><td>T. 阿尔马达</td><td>LW</td><td>世界群英(PTG)</td><td>127</td></tr>
+<tr><td>28</td><td>A. 古伊里</td><td>ST</td><td>世界群英(PTG)</td><td>126</td></tr>
+<tr><td>29</td><td>A. 卡拉贝克</td><td>LW</td><td>世界群英(PTG)</td><td>121</td></tr>
+<tr><td>30</td><td>S. 本拉马</td><td>LW</td><td>世界群英(PTG)</td><td>121</td></tr>
+</tbody></table>
+<div class="icon-block"><div class="icon-label">传奇时刻 ICON TM（1人）</div>
+<div class="chip-grid">
+<span class="chip icon-chip">埃辛</span>
+</div></div>
+<a class="back-top" href="#top">↑ 返回目录</a>
+</section>
+
+<div class="footer">FC Online · 俱乐部甄选球员包 球员公示 · 2026年9月14日-10月7日</div>
+
+</div>
+</body>
+</html>
